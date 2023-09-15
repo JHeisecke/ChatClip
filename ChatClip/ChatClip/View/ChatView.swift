@@ -13,7 +13,7 @@ struct ChatView: View {
     @State private var number: String = ""
     @State private var countryCode: String = ""
     
-    var api: API
+    var viewModel: ChatViewModel
     
     var body: some View {
         ZStack {
@@ -78,8 +78,7 @@ struct ChatView: View {
                             
                         }
                     Button {
-                        let countryCode = self.countryCode == "" ? "+595" : self.countryCode
-                        api.sendWhatsappMessage(to: "\(countryCode)\(number)", with: message)
+                        viewModel.chat(to: number, with: countryCode, send: message)
                     } label: {
                         Text("send")
                             .font(.glacial(.regular, size: 18))
@@ -103,7 +102,7 @@ struct ChatView: View {
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView(api: API())
+        ChatView(viewModel: ChatViewModel(apiService: APIClient()))
             .environment(\.locale, .init(identifier: "en"))
     }
 }
