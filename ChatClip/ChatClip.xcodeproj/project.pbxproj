@@ -22,8 +22,6 @@
 		00FE1C722AB4E2370071AA79 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C712AB4E2370071AA79 /* Endpoints.swift */; };
 		00FE1C752AB4E3990071AA79 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00FE1C772AB4E3990071AA79 /* Localizable.strings */; };
 		00FE1C7C2AB4E76B0071AA79 /* country_codes.json in Resources */ = {isa = PBXBuildFile; fileRef = 00FE1C7B2AB4E76B0071AA79 /* country_codes.json */; };
-		00FE1C7F2AB4E7DA0071AA79 /* CountryCodePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C7E2AB4E7DA0071AA79 /* CountryCodePicker.swift */; };
-		00FE1C822AB4E8320071AA79 /* CountryCodePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C812AB4E8320071AA79 /* CountryCodePickerViewModel.swift */; };
 		00FE1C842AB4E85E0071AA79 /* CountryPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C832AB4E85E0071AA79 /* CountryPhone.swift */; };
 		00FE1C872AB4E9890071AA79 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C862AB4E9890071AA79 /* APIService.swift */; };
 		00FE1C892AB4EA250071AA79 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C882AB4EA250071AA79 /* ChatViewModel.swift */; };
@@ -48,8 +46,6 @@
 		00FE1C762AB4E3990071AA79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00FE1C7A2AB4E4680071AA79 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		00FE1C7B2AB4E76B0071AA79 /* country_codes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country_codes.json; sourceTree = "<group>"; };
-		00FE1C7E2AB4E7DA0071AA79 /* CountryCodePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodePicker.swift; sourceTree = "<group>"; };
-		00FE1C812AB4E8320071AA79 /* CountryCodePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodePickerViewModel.swift; sourceTree = "<group>"; };
 		00FE1C832AB4E85E0071AA79 /* CountryPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPhone.swift; sourceTree = "<group>"; };
 		00FE1C862AB4E9890071AA79 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		00FE1C882AB4EA250071AA79 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
@@ -117,7 +113,6 @@
 			children = (
 				00FE1C7D2AB4E7B00071AA79 /* Utils */,
 				006C2DBF2AB498DF000DF11C /* ChatView.swift */,
-				00FE1C7E2AB4E7DA0071AA79 /* CountryCodePicker.swift */,
 				00FE1C802AB4E81F0071AA79 /* ViewModel */,
 			);
 			path = View;
@@ -176,7 +171,6 @@
 		00FE1C802AB4E81F0071AA79 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				00FE1C812AB4E8320071AA79 /* CountryCodePickerViewModel.swift */,
 				00FE1C882AB4EA250071AA79 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
@@ -268,9 +262,7 @@
 				006C2DC22AB49916000DF11C /* APIClient.swift in Sources */,
 				006C2DAE2AB49804000DF11C /* ChatClipApp.swift in Sources */,
 				00FE1C842AB4E85E0071AA79 /* CountryPhone.swift in Sources */,
-				00FE1C822AB4E8320071AA79 /* CountryCodePickerViewModel.swift in Sources */,
 				00FE1C892AB4EA250071AA79 /* ChatViewModel.swift in Sources */,
-				00FE1C7F2AB4E7DA0071AA79 /* CountryCodePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

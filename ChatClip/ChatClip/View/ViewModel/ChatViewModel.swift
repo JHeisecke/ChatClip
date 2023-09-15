@@ -7,10 +7,24 @@
 
 import Foundation
 
-struct ChatViewModel {
+final class ChatViewModel: ObservableObject {
     
     // MARK: - Properties
 
+    @Published private(set) var countryCodes: CountryPhoneCodes = []
+    
+    @Published var countryCode = ""
+    @Published var message = ""
+    @Published var phoneNumber = "" {
+        didSet {
+            let filtered = phoneNumber.filter { $0.isNumber }
+            
+            if phoneNumber != filtered {
+                phoneNumber = filtered
+            }
+        }
+    }
+    
     private let apiService: APIService
     
     // MARK: - Initialization
@@ -19,10 +33,29 @@ struct ChatViewModel {
         self.apiService = apiService
     }
 
+    // MARK: -
+    
+    var completeNumber: String {
+        return countryCode + phoneNumber
+    }
+    
+    var disableButton: Bool {
+        return countryCode == "" || phoneNumber == ""
+    }
+    
     // MARK: - Public API
     
-    func chat(to phoneNumber: String, with countryCode: String, send message: String) {
-        let completeNumber = countryCode == "" ? "+595" : countryCode + phoneNumber
+    func chat() {
         apiService.sendWhatsappMessage(to: completeNumber, with: message)
+    }
+    
+    func getCountryPhoneCodes() {
+        Task {
+            do {
+                countryCodes = try await apiService.getCountryCodes()
+            } catch {
+                print("Unable to read countries \(error)")
+            }
+        }
     }
 }

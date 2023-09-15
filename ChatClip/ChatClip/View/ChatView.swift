@@ -9,11 +9,7 @@ import SwiftUI
 
 struct ChatView: View {
     
-    @State private var message: String = ""
-    @State private var number: String = ""
-    @State private var countryCode: String = ""
-    
-    var viewModel: ChatViewModel
+    @ObservedObject var viewModel: ChatViewModel
     
     var body: some View {
         ZStack {
@@ -33,7 +29,7 @@ struct ChatView: View {
                                 HStack {
                                     TextField(
                                         "",
-                                        text: $countryCode,
+                                        text: $viewModel.countryCode,
                                         prompt:
                                             Text("label.countryCode")
                                             .foregroundColor(.bone)
@@ -45,7 +41,7 @@ struct ChatView: View {
                                     .foregroundColor(.black)
                                     TextField(
                                         "",
-                                        text: $number,
+                                        text: $viewModel.phoneNumber,
                                         prompt:
                                             Text("label.number")
                                             .foregroundColor(.bone)
@@ -56,7 +52,7 @@ struct ChatView: View {
                                 }
                                 TextField(
                                     "",
-                                    text: $message,
+                                    text: $viewModel.message,
                                     prompt:
                                         Text("label.message")
                                         .foregroundColor(.bone)
@@ -78,16 +74,17 @@ struct ChatView: View {
                             
                         }
                     Button {
-                        viewModel.chat(to: number, with: countryCode, send: message)
+                        viewModel.chat()
                     } label: {
                         Text("send")
                             .font(.glacial(.regular, size: 18))
                             .foregroundColor(Color.tealGreenDark)
                             .padding()
-                            .background(Color.lime)
+                            .background(viewModel.disableButton ? Color.bone : Color.lime)
                             .cornerRadius(10)
                             .padding(5)
                     }
+                    .disabled(viewModel.disableButton)
                     Spacer()
                     
                 }

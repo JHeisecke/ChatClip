@@ -13,4 +13,5 @@ struct CountryPhone: Codable {
     let name: String
     let dialCode: String
     let code: String
+    let emoji: String
 }
