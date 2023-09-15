@@ -13,7 +13,7 @@ struct ChatView: View {
     @State private var number: String = ""
     @State private var countryCode: String = ""
     
-    let api: API = API()
+    var api: API
     
     var body: some View {
         ZStack {
@@ -35,10 +35,11 @@ struct ChatView: View {
                                         "",
                                         text: $countryCode,
                                         prompt:
-                                            Text("+595")
+                                            Text("label.countryCode")
                                             .foregroundColor(.bone)
                                     )
                                     .keyboardType(.numberPad)
+                                    .font(.glacial(.regular, size: 18))
                                     .textFieldStyle(ChatClipTextFieldStyle())
                                     .frame(width: width*0.30)
                                     .foregroundColor(.black)
@@ -46,9 +47,10 @@ struct ChatView: View {
                                         "",
                                         text: $number,
                                         prompt:
-                                            Text("Phone Number")
+                                            Text("label.number")
                                             .foregroundColor(.bone)
                                     )
+                                    .font(.glacial(.regular, size: 18))
                                     .textFieldStyle(ChatClipTextFieldStyle())
                                     .keyboardType(.numberPad)
                                 }
@@ -56,20 +58,20 @@ struct ChatView: View {
                                     "",
                                     text: $message,
                                     prompt:
-                                        Text("Message (Optional)")
+                                        Text("label.message")
                                         .foregroundColor(.bone)
                                 )
                                 .textFieldStyle(ChatClipTextFieldStyle())
+                                .font(.glacial(.regular, size: 18))
                                 Spacer()
                             }
                             .padding()
                         }
                         .shadow(radius: 10)
                         .overlay(alignment: .top) {
-                            Text("ChatClip")
+                            Text("chatclip")
                                 .foregroundColor(Color.tealGreenDark)
-                                .font(.system(size: 50))
-                                .fontWeight(.bold)
+                                .font(.glacial(.bold, size: 50))
                                 .foregroundColor(.cyan)
                                 .offset(y: -49)
                                 .shadow(radius: 1)
@@ -79,7 +81,8 @@ struct ChatView: View {
                         let countryCode = self.countryCode == "" ? "+595" : self.countryCode
                         api.sendWhatsappMessage(to: "\(countryCode)\(number)", with: message)
                     } label: {
-                        Text("Send Message")
+                        Text("send")
+                            .font(.glacial(.regular, size: 18))
                             .foregroundColor(Color.tealGreenDark)
                             .padding()
                             .background(Color.lime)
@@ -100,6 +103,7 @@ struct ChatView: View {
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView()
+        ChatView(api: API())
+            .environment(\.locale, .init(identifier: "en"))
     }
 }

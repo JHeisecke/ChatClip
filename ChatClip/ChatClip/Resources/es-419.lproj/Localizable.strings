@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  ChatClip
+
+  Created by Javier Heisecke on 2023-09-15.
+  
+*/
+
+//MARK: - App
+
+"chatclip" = "ChatClip";
+
+//MARK: - Labels
+"label.countryCode" = "+1";
+"label.message" = "Mensaje (Opcional)";
+"label.number" = "Número de Teléfono";
+
+//MARK: - Actions
+
+"send" = "Enviar";

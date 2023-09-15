@@ -15,6 +15,12 @@
 		006C2DC42AB49EF0000DF11C /* ChatClipTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006C2DC32AB49EF0000DF11C /* ChatClipTextFieldStyle.swift */; };
 		006C2DC82AB4A9D3000DF11C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006C2DC72AB4A9D3000DF11C /* Colors.xcassets */; };
 		006C2DCB2AB4AA8D000DF11C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006C2DCA2AB4AA8D000DF11C /* Colors.swift */; };
+		006C2DD02AB4DD14000DF11C /* GlacialIndifference-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 006C2DCE2AB4DD0C000DF11C /* GlacialIndifference-Bold.otf */; };
+		006C2DD12AB4DD17000DF11C /* GlacialIndifference-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 006C2DCF2AB4DD0C000DF11C /* GlacialIndifference-Italic.otf */; };
+		006C2DD42AB4DE61000DF11C /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006C2DD32AB4DE61000DF11C /* Font.swift */; };
+		00FE1C702AB4E0610071AA79 /* GlacialIndifference-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00FE1C6F2AB4E0600071AA79 /* GlacialIndifference-Regular.otf */; };
+		00FE1C722AB4E2370071AA79 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C712AB4E2370071AA79 /* Endpoints.swift */; };
+		00FE1C752AB4E3990071AA79 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00FE1C772AB4E3990071AA79 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +31,16 @@
 		006C2DBF2AB498DF000DF11C /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		006C2DC12AB49916000DF11C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		006C2DC32AB49EF0000DF11C /* ChatClipTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatClipTextFieldStyle.swift; sourceTree = "<group>"; };
-		006C2DC52AB4A48F000DF11C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		006C2DC52AB4A48F000DF11C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		006C2DC72AB4A9D3000DF11C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		006C2DCA2AB4AA8D000DF11C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		006C2DCE2AB4DD0C000DF11C /* GlacialIndifference-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GlacialIndifference-Bold.otf"; sourceTree = "<group>"; };
+		006C2DCF2AB4DD0C000DF11C /* GlacialIndifference-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GlacialIndifference-Italic.otf"; sourceTree = "<group>"; };
+		006C2DD32AB4DE61000DF11C /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		00FE1C6F2AB4E0600071AA79 /* GlacialIndifference-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GlacialIndifference-Regular.otf"; sourceTree = "<group>"; };
+		00FE1C712AB4E2370071AA79 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		00FE1C762AB4E3990071AA79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		00FE1C7A2AB4E4680071AA79 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +73,11 @@
 		006C2DAC2AB49804000DF11C /* ChatClip */ = {
 			isa = PBXGroup;
 			children = (
-				006C2DC62AB4A9C1000DF11C /* Resources */,
-				006C2DC52AB4A48F000DF11C /* Info.plist */,
+				006C2DBB2AB49842000DF11C /* App */,
 				006C2DBE2AB49863000DF11C /* Data */,
 				006C2DBD2AB4984E000DF11C /* Model */,
 				006C2DBC2AB49847000DF11C /* View */,
-				006C2DBB2AB49842000DF11C /* App */,
+				006C2DC62AB4A9C1000DF11C /* Resources */,
 				006C2DB32AB49806000DF11C /* Preview Content */,
 			);
 			path = ChatClip;
@@ -82,6 +94,7 @@
 		006C2DBB2AB49842000DF11C /* App */ = {
 			isa = PBXGroup;
 			children = (
+				006C2DC52AB4A48F000DF11C /* Info.plist */,
 				006C2DAD2AB49804000DF11C /* ChatClipApp.swift */,
 			);
 			path = App;
@@ -107,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				006C2DC12AB49916000DF11C /* API.swift */,
+				00FE1C712AB4E2370071AA79 /* Endpoints.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -114,11 +128,24 @@
 		006C2DC62AB4A9C1000DF11C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				006C2DCC2AB4DD03000DF11C /* Font */,
 				006C2DB12AB49806000DF11C /* Assets.xcassets */,
 				006C2DC72AB4A9D3000DF11C /* Colors.xcassets */,
 				006C2DCA2AB4AA8D000DF11C /* Colors.swift */,
+				00FE1C772AB4E3990071AA79 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		006C2DCC2AB4DD03000DF11C /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				00FE1C6F2AB4E0600071AA79 /* GlacialIndifference-Regular.otf */,
+				006C2DCE2AB4DD0C000DF11C /* GlacialIndifference-Bold.otf */,
+				006C2DCF2AB4DD0C000DF11C /* GlacialIndifference-Italic.otf */,
+				006C2DD32AB4DE61000DF11C /* Font.swift */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +190,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = 006C2DA12AB49804000DF11C;
 			productRefGroup = 006C2DAB2AB49804000DF11C /* Products */;
@@ -179,8 +207,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				006C2DD02AB4DD14000DF11C /* GlacialIndifference-Bold.otf in Resources */,
 				006C2DC82AB4A9D3000DF11C /* Colors.xcassets in Resources */,
+				006C2DD12AB4DD17000DF11C /* GlacialIndifference-Italic.otf in Resources */,
+				00FE1C752AB4E3990071AA79 /* Localizable.strings in Resources */,
 				006C2DB52AB49806000DF11C /* Preview Assets.xcassets in Resources */,
+				00FE1C702AB4E0610071AA79 /* GlacialIndifference-Regular.otf in Resources */,
 				006C2DB22AB49806000DF11C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +226,8 @@
 			files = (
 				006C2DC02AB498DF000DF11C /* ChatView.swift in Sources */,
 				006C2DCB2AB4AA8D000DF11C /* Colors.swift in Sources */,
+				006C2DD42AB4DE61000DF11C /* Font.swift in Sources */,
+				00FE1C722AB4E2370071AA79 /* Endpoints.swift in Sources */,
 				006C2DC42AB49EF0000DF11C /* ChatClipTextFieldStyle.swift in Sources */,
 				006C2DC22AB49916000DF11C /* API.swift in Sources */,
 				006C2DAE2AB49804000DF11C /* ChatClipApp.swift in Sources */,
@@ -202,11 +236,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		00FE1C772AB4E3990071AA79 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00FE1C762AB4E3990071AA79 /* en */,
+				00FE1C7A2AB4E4680071AA79 /* es-419 */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		006C2DB62AB49806000DF11C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -267,6 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
