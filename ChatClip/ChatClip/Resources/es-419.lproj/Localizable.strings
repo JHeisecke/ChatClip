@@ -11,7 +11,7 @@
 "chatclip" = "ChatClip";
 
 //MARK: - Labels
-"label.countryCode" = "+1";
+"label.countryCode" = "595";
 "label.message" = "Mensaje (Opcional)";
 "label.number" = "Número de Teléfono";
 

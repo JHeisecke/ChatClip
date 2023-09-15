@@ -33,7 +33,6 @@ struct ChatView: View {
                                 .font(.glacial(.bold, size: 50))
                                 .foregroundColor(.cyan)
                                 .offset(y: -49)
-                                .shadow(radius: 1)
                             
                         }
                     Button {
@@ -94,8 +93,10 @@ struct ChatView: View {
                 text: $viewModel.message,
                 prompt:
                     Text("label.message")
-                    .foregroundColor(.bone)
+                    .foregroundColor(.bone),
+                axis: .vertical
             )
+            .lineLimit(1...5)
             .foregroundColor(.tealGreenDark)
             .textFieldStyle(ChatClipTextFieldStyle())
             .font(.glacial(.regular, size: 18))
