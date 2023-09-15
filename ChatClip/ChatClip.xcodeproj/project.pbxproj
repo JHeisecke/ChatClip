@@ -28,6 +28,7 @@
 		00FE1C8D2AB4FA180071AA79 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C8C2AB4FA180071AA79 /* AppData.swift */; };
 		00FE1C8F2AB4FA700071AA79 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C8E2AB4FA700071AA79 /* Constants.swift */; };
 		00FE1C912AB4FAC10071AA79 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C902AB4FAC10071AA79 /* Storage.swift */; };
+		00FE1C942AB4FFBF0071AA79 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C932AB4FFBF0071AA79 /* UIApplication+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		00FE1C8C2AB4FA180071AA79 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		00FE1C8E2AB4FA700071AA79 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		00FE1C902AB4FAC10071AA79 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		00FE1C932AB4FFBF0071AA79 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		006C2DBB2AB49842000DF11C /* App */ = {
 			isa = PBXGroup;
 			children = (
+				00FE1C922AB4FFB30071AA79 /* Extensions */,
 				006C2DC52AB4A48F000DF11C /* Info.plist */,
 				006C2DAD2AB49804000DF11C /* ChatClipApp.swift */,
 			);
@@ -193,6 +196,14 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		00FE1C922AB4FFB30071AA79 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				00FE1C932AB4FFBF0071AA79 /* UIApplication+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -270,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00FE1C942AB4FFBF0071AA79 /* UIApplication+Extensions.swift in Sources */,
 				006C2DC02AB498DF000DF11C /* ChatView.swift in Sources */,
 				006C2DCB2AB4AA8D000DF11C /* Colors.swift in Sources */,
 				006C2DD42AB4DE61000DF11C /* Font.swift in Sources */,

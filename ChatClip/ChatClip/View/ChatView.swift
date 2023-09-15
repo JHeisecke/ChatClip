@@ -58,6 +58,9 @@ struct ChatView: View {
         .onAppear {
             //TODO: viewModel.getCountryPhoneCodes()
         }
+        .onTapGesture {
+            UIApplication.shared.hideKeyboard()
+        }
     }
     
     func floatingCard(width: CGFloat) -> some View {
