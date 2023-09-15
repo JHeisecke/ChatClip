@@ -13,7 +13,7 @@ final class ChatViewModel: ObservableObject {
 
     @Published private(set) var countryCodes: CountryPhoneCodes = []
     
-    @Published var countryCode = ""
+    @Published var countryCode = AppData.lastCountryCodeUsed ?? ""
     @Published var message = ""
     @Published var phoneNumber = "" {
         didSet {
@@ -35,10 +35,6 @@ final class ChatViewModel: ObservableObject {
 
     // MARK: -
     
-    var completeNumber: String {
-        return countryCode + phoneNumber
-    }
-    
     var disableButton: Bool {
         return countryCode == "" || phoneNumber == ""
     }
@@ -46,7 +42,7 @@ final class ChatViewModel: ObservableObject {
     // MARK: - Public API
     
     func chat() {
-        apiService.sendWhatsappMessage(to: completeNumber, with: message)
+        apiService.sendWhatsappMessage(to: phoneNumber, with: countryCode, text: message)
     }
     
     func getCountryPhoneCodes() {

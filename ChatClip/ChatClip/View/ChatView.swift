@@ -24,44 +24,7 @@ struct ChatView: View {
                         .foregroundColor(Color.bone)
                         .padding(.bottom)
                         .overlay {
-                            VStack {
-                                Spacer()
-                                HStack {
-                                    TextField(
-                                        "",
-                                        text: $viewModel.countryCode,
-                                        prompt:
-                                            Text("label.countryCode")
-                                            .foregroundColor(.bone)
-                                    )
-                                    .keyboardType(.numberPad)
-                                    .font(.glacial(.regular, size: 18))
-                                    .textFieldStyle(ChatClipTextFieldStyle())
-                                    .frame(width: width*0.30)
-                                    .foregroundColor(.black)
-                                    TextField(
-                                        "",
-                                        text: $viewModel.phoneNumber,
-                                        prompt:
-                                            Text("label.number")
-                                            .foregroundColor(.bone)
-                                    )
-                                    .font(.glacial(.regular, size: 18))
-                                    .textFieldStyle(ChatClipTextFieldStyle())
-                                    .keyboardType(.numberPad)
-                                }
-                                TextField(
-                                    "",
-                                    text: $viewModel.message,
-                                    prompt:
-                                        Text("label.message")
-                                        .foregroundColor(.bone)
-                                )
-                                .textFieldStyle(ChatClipTextFieldStyle())
-                                .font(.glacial(.regular, size: 18))
-                                Spacer()
-                            }
-                            .padding()
+                            floatingCard(width: width)
                         }
                         .shadow(radius: 10)
                         .overlay(alignment: .top) {
@@ -93,6 +56,52 @@ struct ChatView: View {
         }
         .ignoresSafeArea()
         .ignoresSafeArea(.keyboard)
+        .onAppear {
+            //TODO: viewModel.getCountryPhoneCodes()
+        }
+    }
+    
+    func floatingCard(width: CGFloat) -> some View {
+        VStack {
+            Spacer()
+            HStack {
+                TextField(
+                    "",
+                    text: $viewModel.countryCode,
+                    prompt:
+                        Text("label.countryCode")
+                        .foregroundColor(.bone)
+                )
+                .keyboardType(.numberPad)
+                .font(.glacial(.regular, size: 18))
+                .textFieldStyle(ChatClipTextFieldStyle())
+                .frame(width: width*0.30)
+                .foregroundColor(.tealGreenDark)
+                TextField(
+                    "",
+                    text: $viewModel.phoneNumber,
+                    prompt:
+                        Text("label.number")
+                        .foregroundColor(.bone)
+                )
+                .foregroundColor(.tealGreenDark)
+                .font(.glacial(.regular, size: 18))
+                .textFieldStyle(ChatClipTextFieldStyle())
+                .keyboardType(.numberPad)
+            }
+            TextField(
+                "",
+                text: $viewModel.message,
+                prompt:
+                    Text("label.message")
+                    .foregroundColor(.bone)
+            )
+            .foregroundColor(.tealGreenDark)
+            .textFieldStyle(ChatClipTextFieldStyle())
+            .font(.glacial(.regular, size: 18))
+            Spacer()
+        }
+        .padding()
     }
     
 }

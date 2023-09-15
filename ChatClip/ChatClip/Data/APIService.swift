@@ -11,7 +11,7 @@ protocol APIService {
     
     // MARK: - Methods
     
-    func sendWhatsappMessage(to phoneNumber: String, with message: String?)
+    func sendWhatsappMessage(to phoneNumber: String, with countryCode: String, text message: String?)
     
     func getCountryCodes() async throws -> CountryPhoneCodes
 }

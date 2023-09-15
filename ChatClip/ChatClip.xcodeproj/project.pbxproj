@@ -25,6 +25,9 @@
 		00FE1C842AB4E85E0071AA79 /* CountryPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C832AB4E85E0071AA79 /* CountryPhone.swift */; };
 		00FE1C872AB4E9890071AA79 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C862AB4E9890071AA79 /* APIService.swift */; };
 		00FE1C892AB4EA250071AA79 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C882AB4EA250071AA79 /* ChatViewModel.swift */; };
+		00FE1C8D2AB4FA180071AA79 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C8C2AB4FA180071AA79 /* AppData.swift */; };
+		00FE1C8F2AB4FA700071AA79 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C8E2AB4FA700071AA79 /* Constants.swift */; };
+		00FE1C912AB4FAC10071AA79 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C902AB4FAC10071AA79 /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +52,9 @@
 		00FE1C832AB4E85E0071AA79 /* CountryPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPhone.swift; sourceTree = "<group>"; };
 		00FE1C862AB4E9890071AA79 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		00FE1C882AB4EA250071AA79 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		00FE1C8C2AB4FA180071AA79 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		00FE1C8E2AB4FA700071AA79 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		00FE1C902AB4FAC10071AA79 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				00FE1C832AB4E85E0071AA79 /* CountryPhone.swift */,
+				00FE1C8E2AB4FA700071AA79 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,6 +136,7 @@
 		006C2DBE2AB49863000DF11C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				00FE1C8B2AB4FA0F0071AA79 /* Storage */,
 				00FE1C7B2AB4E76B0071AA79 /* country_codes.json */,
 				00FE1C712AB4E2370071AA79 /* Endpoints.swift */,
 				006C2DC12AB49916000DF11C /* APIClient.swift */,
@@ -174,6 +182,15 @@
 				00FE1C882AB4EA250071AA79 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		00FE1C8B2AB4FA0F0071AA79 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				00FE1C902AB4FAC10071AA79 /* Storage.swift */,
+				00FE1C8C2AB4FA180071AA79 /* AppData.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +277,12 @@
 				00FE1C872AB4E9890071AA79 /* APIService.swift in Sources */,
 				006C2DC42AB49EF0000DF11C /* ChatClipTextFieldStyle.swift in Sources */,
 				006C2DC22AB49916000DF11C /* APIClient.swift in Sources */,
+				00FE1C8D2AB4FA180071AA79 /* AppData.swift in Sources */,
 				006C2DAE2AB49804000DF11C /* ChatClipApp.swift in Sources */,
 				00FE1C842AB4E85E0071AA79 /* CountryPhone.swift in Sources */,
 				00FE1C892AB4EA250071AA79 /* ChatViewModel.swift in Sources */,
+				00FE1C8F2AB4FA700071AA79 /* Constants.swift in Sources */,
+				00FE1C912AB4FAC10071AA79 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
