@@ -36,12 +36,15 @@ final class ChatViewModel: ObservableObject {
     // MARK: -
     
     var disableButton: Bool {
-        return countryCode == "" || phoneNumber == ""
+        return phoneNumber == "" || phoneNumber == "0"
     }
     
     // MARK: - Public API
     
     func chat() {
+        if let firstNumber = phoneNumber.first, firstNumber == "0" {
+            phoneNumber.removeFirst()
+        }
         apiService.sendWhatsappMessage(to: phoneNumber, with: countryCode, text: message)
     }
     

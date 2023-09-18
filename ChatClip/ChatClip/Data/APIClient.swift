@@ -9,7 +9,8 @@ import UIKit
 
 struct APIClient: APIService {
     func sendWhatsappMessage(to phoneNumber: String, with countryCode: String, text message: String?) {
-        if let url = URL(string: Endpoints.initiateWhatsApp(with: phoneNumber, send: message)) {
+        let completedNumber = "\(countryCode)\(phoneNumber)"
+        if let url = URL(string: Endpoints.initiateWhatsApp(with: completedNumber, send: message)) {
             UIApplication.shared.open(url, options: [:], completionHandler: { _ in
                 AppData.lastCountryCodeUsed = countryCode
             })
