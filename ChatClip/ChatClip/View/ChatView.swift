@@ -65,7 +65,10 @@ struct ChatView: View {
     
     func floatingCard(width: CGFloat) -> some View {
         VStack {
-            Spacer()
+            Text("label.help")
+                .font(.glacial(.regular, size: 18))
+                .foregroundColor(.black)
+                .padding(.vertical)
             HStack {
                 TextField(
                     "",

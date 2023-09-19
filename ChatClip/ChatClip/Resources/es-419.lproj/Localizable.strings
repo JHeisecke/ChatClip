@@ -11,6 +11,7 @@
 "chatclip" = "ChatClip";
 
 //MARK: - Labels
+"label.help" = "Envia un mensaje de Whatsapp sin guardar el número de teléfono";
 "label.countryCode" = "+595";
 "label.message" = "Mensaje (Opcional)";
 "label.number" = "Número de Teléfono";
