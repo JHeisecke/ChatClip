@@ -15,6 +15,8 @@
 "label.countryCode" = "+1";
 "label.message" = "Message (Optional)";
 "label.number" = "Phone Number";
+"label.chat" = "Chat";
+"label.reminder" = "Reminder";
 
 //MARK: - Actions
 
