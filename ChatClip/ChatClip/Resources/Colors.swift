@@ -23,6 +23,9 @@ extension UIColor {
     static var bone: UIColor {
         .init(named: "bone")!
     }
+    static var theme: UIColor {
+        .init(named: "theme")!
+    }
 }
 
 extension Color {
@@ -40,5 +43,8 @@ extension Color {
     }
     static var bone: Color {
         .init(uiColor: .bone)
+    }
+    static var theme: Color {
+        .init(uiColor: .theme)
     }
 }
