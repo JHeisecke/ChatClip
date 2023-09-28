@@ -13,7 +13,8 @@ struct ChatView: View {
     
     var body: some View {
         ZStack {
-            Color.tealGreen
+            Image("BackgroundImage")
+                .resizable()
             GeometryReader { proxy in
                 let width = proxy.size.width*0.8
                 let height = proxy.size.height*0.3

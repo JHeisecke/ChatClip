@@ -70,6 +70,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		004EB1AC2AC5D86B0010CB39 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		006C2DA12AB49804000DF11C = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +181,7 @@
 		00FE1C7D2AB4E7B00071AA79 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				004EB1AC2AC5D86B0010CB39 /* Extensions */,
 				006C2DC32AB49EF0000DF11C /* ChatClipTextFieldStyle.swift */,
 			);
 			path = Utils;
