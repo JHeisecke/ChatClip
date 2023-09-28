@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MenuView: View {
     
+    var viewModel: MenuViewModel
+    
     @State private var activeTab: Int = 0
     
     // Interface Style
@@ -24,9 +26,7 @@ struct MenuView: View {
     var body: some View {
         TabView(selection: $activeTab) {
             ChatView(
-                viewModel: ChatViewModel(
-                    apiService: APIClient()
-                )
+                viewModel: viewModel.chatViewModel
             )
             .tabItem {
                 Image(systemName: "paperclip")
@@ -115,5 +115,5 @@ struct MenuView: View {
 }
 
 #Preview {
-    MenuView()
+    MenuView(viewModel: MenuViewModel())
 }

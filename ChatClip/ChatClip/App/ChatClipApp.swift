@@ -11,7 +11,7 @@ import SwiftUI
 struct ChatClipApp: App {
     var body: some Scene {
         WindowGroup {
-            MenuView()
+            MenuView(viewModel: MenuViewModel())
         }
     }
 }
