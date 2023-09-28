@@ -82,6 +82,7 @@ struct ChatView: View {
             } label: {
                 Image(systemName: toggleDarkMode ? "sun.max.fill" : "moon.fill")
                     .font(.title2)
+                    .accentColor(Color.theme)
                     .foregroundStyle(Color.theme)
                     .symbolEffect(.bounce, value: toggleDarkMode)
                     .frame(width: 40, height: 40)
