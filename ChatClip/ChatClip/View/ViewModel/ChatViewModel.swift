@@ -7,15 +7,16 @@
 
 import Foundation
 
-final class ChatViewModel: ObservableObject {
+@Observable
+final class ChatViewModel {
     
     // MARK: - Properties
 
-    @Published private(set) var countryCodes: CountryPhoneCodes = []
+    private(set) var countryCodes: CountryPhoneCodes = []
     
-    @Published var countryCode = AppData.lastCountryCodeUsed ?? ""
-    @Published var message = ""
-    @Published var phoneNumber = "" {
+    var countryCode = AppData.lastCountryCodeUsed ?? ""
+    var message = ""
+    var phoneNumber = "" {
         didSet {
             let filtered = phoneNumber.filter { $0.isNumber }
             
