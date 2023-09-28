@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChatView: View {
     
-    @ObservedObject var viewModel: ChatViewModel
+    @Bindable var viewModel: ChatViewModel
     
     // Interface Style
     @AppStorage("toggleDarkMode") private var toggleDarkMode: Bool = false
