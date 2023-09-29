@@ -83,7 +83,7 @@ struct ChatView: View {
                     text: $viewModel.countryCode,
                     prompt:
                         Text("label.countryCode")
-                        .foregroundColor(Color.bone)
+                        .foregroundColor(Color.secondaryAccentColor)
                 )
                 .keyboardType(.numberPad)
                 .font(.glacial(.regular, size: 18))
@@ -95,7 +95,7 @@ struct ChatView: View {
                     text: $viewModel.phoneNumber,
                     prompt:
                         Text("label.number")
-                        .foregroundColor(Color.bone)
+                        .foregroundColor(Color.secondaryAccentColor)
                 )
                 .foregroundColor(Color.primaryBackground)
                 .font(.glacial(.regular, size: 18))
@@ -107,7 +107,7 @@ struct ChatView: View {
                 text: $viewModel.message,
                 prompt:
                     Text("label.message")
-                    .foregroundColor(Color.bone),
+                    .foregroundColor(Color.secondaryAccentColor),
                 axis: .vertical
             )
             .lineLimit(1...5)

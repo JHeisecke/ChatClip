@@ -75,10 +75,10 @@ struct ReminderView: View {
     // MARK: List Component
     
     func reminderView(_ reminder: Reminder) -> some View {
-        return VStack(alignment: .leading, spacing: 5) {
+        VStack(alignment: .leading, spacing: 5) {
             if let title = reminder.title {
                 Text(title)
-                    .font(.glacial(.regular, size: 17))
+                    .font(.glacial(.bold, size: 17))
                     .lineLimit(1)
             }
             Text(reminder.number)
