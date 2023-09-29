@@ -9,47 +9,56 @@ import SwiftUI
 
 struct ReminderView: View {
     
+    // MARK: Properties
+    
+    @State private var showReminderSheet: Bool = false
+    
+    // Form
+    @State private var useDate: Bool = false
+    @State private var useTime: Bool = false
+    @State private var title: String = ""
+    @State private var phoneNumber: String = ""
+    @State private var message: String = ""
+    @State private var remindMeAt: Date = Date()
+    
     var viewModel: ReminderViewModel
     
     var body: some View {
         VStack {
             List {
                 ForEach(viewModel.reminders, id: \.id) { reminder in
-                    reminderView(reminder)
-                    .swipeActions(edge: .leading) {
-                        Button {
-                            // TODO: Edit reminder
-                        } label: {
-                            Image(systemName: "pencil")
-                        }
-                        .tint(.blue)
+                    Button {
+                        viewModel.chat(with: reminder)
+                    } label: {
+                        reminderView(reminder)
+                            .swipeActions(edge: .leading) {
+                                Button {
+                                    // TODO: Edit reminder
+                                } label: {
+                                    Image(systemName: "pencil")
+                                }
+                                .tint(.blue)
+                            }
+                            .swipeActions(edge: .trailing) {
+                                Button {
+                                    // TODO: Delete reminder
+                                } label: {
+                                    Image(systemName: "trash")
+                                }
+                                .tint(.red)
+                            }
                     }
-                    .swipeActions(edge: .trailing) {
-                        Button {
-                            // TODO: Delete reminder
-                        } label: {
-                            Image(systemName: "trash")
-                        }
-                        .tint(.red)
-                    }
+                    .listRowBackground(Color.bone)
                 }
             }
             .listRowSpacing(20)
             .scrollContentBackground(.hidden)
-//            Button("Add Reminder") {
-//                
-//            }
-//            .frame(width: 300, height: 50)
-//            .foregroundStyle(.white)
-//            .font(.glacial(.bold, size: 19))
-//            .buttonStyle(ThreeDButtonStyle())
-//            .background(Color.clear)
         }
         .padding(.vertical)
         .background(Color.secondaryAccentColor)
         .overlay(alignment: .topLeading) {
             Button {
-                // TODO: call popup to add reminder
+                showReminderSheet.toggle()
             } label: {
                 Image(systemName: "plus")
                     .font(.title2)
@@ -57,7 +66,13 @@ struct ReminderView: View {
                     .frame(width: 40, height: 40)
             }
         }
+        .sheet(isPresented: $showReminderSheet) {
+            reminderSheet()
+                .presentationDetents([.large])
+        }
     }
+    
+    // MARK: List Component
     
     func reminderView(_ reminder: Reminder) -> some View {
         return VStack(alignment: .leading, spacing: 5) {
@@ -84,12 +99,74 @@ struct ReminderView: View {
         .foregroundStyle(Color.primaryBackground)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 5)
-        .listRowBackground(Color.bone)
+    }
+    
+    // MARK: Sheet View
+    
+    func reminderSheet() -> some View {
+        NavigationView {
+            Form {
+                Section {
+                    TextField("Title", text: $title)
+                }
+
+                Section {
+                    TextField("label.number", text: $phoneNumber)
+                        .keyboardType(.numberPad)
+                    TextField("label.message", text: $message)
+                } header: {
+                    Text("Text")
+                }
+                
+                Section {
+                    Toggle(isOn: $useDate) {
+                        Label("Date", systemImage: "calendar")
+                    }
+                    Toggle(isOn: $useTime) {
+                        Label("Time", systemImage: "clock")
+                    }
+                } header: {
+                    Text("Remind me at:")
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showReminderSheet.toggle()
+                        //TODO: Save reminder
+                    } label: {
+                        Text("Save")
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.blue)
+                    }
+                }
+                ToolbarItem(placement: .principal) {
+                    Text("Details")
+                        .fontWeight(.semibold)
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        showReminderSheet.toggle()
+                        useDate = false
+                        useTime = false
+                        title = ""
+                        phoneNumber = ""
+                        message = ""
+                        remindMeAt = Date()
+                    } label: {
+                        Text("Cancel")
+                            .foregroundStyle(.blue)
+                    }
+                }
+            }
+        }
     }
 }
 
+// MARK: - Preview
+
 #Preview {
     TabView {
-        ReminderView(viewModel: ReminderViewModel())
+        ReminderView(viewModel: ReminderViewModel(apiService: APIClient()))
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 typealias RemindersList = [Reminder]
 
-struct Reminder: Identifiable {
+struct Reminder: Identifiable, Codable {
     var id: Int
     var number: String
     var title: String?

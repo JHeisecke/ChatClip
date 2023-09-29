@@ -23,9 +23,9 @@
 		0093C28B2AC60CB60061768B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C28A2AC60CB60061768B /* MenuView.swift */; };
 		0093C28D2AC611B60061768B /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C28C2AC611B60061768B /* MenuViewModel.swift */; };
 		0093C28F2AC614200061768B /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C28E2AC614200061768B /* ReminderView.swift */; };
-		0093C2912AC633570061768B /* ThreeDButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C2902AC633570061768B /* ThreeDButtonStyle.swift */; };
 		0093C2932AC65F6F0061768B /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C2922AC65F6F0061768B /* ReminderViewModel.swift */; };
 		0093C2952AC65FB60061768B /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C2942AC65FB60061768B /* Reminder.swift */; };
+		0093C2972AC66DE70061768B /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C2962AC66DE70061768B /* Data+Extensions.swift */; };
 		00FE1C702AB4E0610071AA79 /* GlacialIndifference-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00FE1C6F2AB4E0600071AA79 /* GlacialIndifference-Regular.otf */; };
 		00FE1C722AB4E2370071AA79 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C712AB4E2370071AA79 /* Endpoints.swift */; };
 		00FE1C752AB4E3990071AA79 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00FE1C772AB4E3990071AA79 /* Localizable.strings */; };
@@ -58,9 +58,9 @@
 		0093C28A2AC60CB60061768B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		0093C28C2AC611B60061768B /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		0093C28E2AC614200061768B /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
-		0093C2902AC633570061768B /* ThreeDButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDButtonStyle.swift; sourceTree = "<group>"; };
 		0093C2922AC65F6F0061768B /* ReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
 		0093C2942AC65FB60061768B /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		0093C2962AC66DE70061768B /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		00FE1C6F2AB4E0600071AA79 /* GlacialIndifference-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GlacialIndifference-Regular.otf"; sourceTree = "<group>"; };
 		00FE1C712AB4E2370071AA79 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		00FE1C762AB4E3990071AA79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -91,6 +91,7 @@
 			children = (
 				004EB1B12AC5DE4D0010CB39 /* View+Extensions.swift */,
 				004EB1B32AC5E0620010CB39 /* RectKey.swift */,
+				0093C2962AC66DE70061768B /* Data+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -204,7 +205,6 @@
 			children = (
 				004EB1AC2AC5D86B0010CB39 /* Helpers */,
 				006C2DC32AB49EF0000DF11C /* ChatClipTextFieldStyle.swift */,
-				0093C2902AC633570061768B /* ThreeDButtonStyle.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -316,7 +316,6 @@
 				00FE1C942AB4FFBF0071AA79 /* UIApplication+Extensions.swift in Sources */,
 				006C2DC02AB498DF000DF11C /* ChatView.swift in Sources */,
 				006C2DCB2AB4AA8D000DF11C /* Colors.swift in Sources */,
-				0093C2912AC633570061768B /* ThreeDButtonStyle.swift in Sources */,
 				0093C28D2AC611B60061768B /* MenuViewModel.swift in Sources */,
 				0093C28F2AC614200061768B /* ReminderView.swift in Sources */,
 				006C2DD42AB4DE61000DF11C /* Font.swift in Sources */,
@@ -333,6 +332,7 @@
 				00FE1C892AB4EA250071AA79 /* ChatViewModel.swift in Sources */,
 				00FE1C8F2AB4FA700071AA79 /* Constants.swift in Sources */,
 				004EB1B22AC5DE4D0010CB39 /* View+Extensions.swift in Sources */,
+				0093C2972AC66DE70061768B /* Data+Extensions.swift in Sources */,
 				00FE1C912AB4FAC10071AA79 /* Storage.swift in Sources */,
 				004EB1B42AC5E0620010CB39 /* RectKey.swift in Sources */,
 			);

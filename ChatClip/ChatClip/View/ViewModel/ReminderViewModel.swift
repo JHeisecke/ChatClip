@@ -11,5 +11,20 @@ final class ReminderViewModel {
     
     // MARK: - Properties
 
-    private(set) var reminders: RemindersList = Reminder.reminders
+    private(set) var reminders: RemindersList = AppData.reminders
+    
+    
+    private let apiService: APIService
+    
+    // MARK: - Initialization
+
+    init(apiService: APIService) {
+        self.apiService = apiService
+    }
+    
+    // MARK: - Public API
+    
+    func chat(with reminder: Reminder) {
+        apiService.sendWhatsappMessage(to: reminder.number, with: "", text: reminder.message)
+    }
 }

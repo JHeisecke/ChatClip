@@ -15,6 +15,6 @@ final class MenuViewModel {
     }
     
     var reminderViewModel: ReminderViewModel {
-        .init()
+        .init(apiService: APIClient())
     }
 }
