@@ -70,31 +70,34 @@ struct ChatView: View {
     
     func floatingCard(width: CGFloat) -> some View {
         VStack {
+            Spacer()
             Text("label.help")
                 .font(.glacial(.regular, size: 18))
-                .foregroundColor(.black)
-                .padding(.vertical)
+                .foregroundColor(Color.primaryBackground)
+                .lineLimit(5)
+                .multilineTextAlignment(.leading)
+            Spacer()
             HStack {
                 TextField(
                     "",
                     text: $viewModel.countryCode,
                     prompt:
                         Text("label.countryCode")
-                        .foregroundColor(.bone)
+                        .foregroundColor(Color.bone)
                 )
                 .keyboardType(.numberPad)
                 .font(.glacial(.regular, size: 18))
                 .textFieldStyle(ChatClipTextFieldStyle())
                 .frame(width: width*0.30)
-                .foregroundColor(.tealGreenDark)
+                .foregroundColor(Color.primaryBackground)
                 TextField(
                     "",
                     text: $viewModel.phoneNumber,
                     prompt:
                         Text("label.number")
-                        .foregroundColor(.bone)
+                        .foregroundColor(Color.bone)
                 )
-                .foregroundColor(.tealGreenDark)
+                .foregroundColor(Color.primaryBackground)
                 .font(.glacial(.regular, size: 18))
                 .textFieldStyle(ChatClipTextFieldStyle())
                 .keyboardType(.numberPad)
@@ -104,7 +107,7 @@ struct ChatView: View {
                 text: $viewModel.message,
                 prompt:
                     Text("label.message")
-                    .foregroundColor(.bone),
+                    .foregroundColor(Color.bone),
                 axis: .vertical
             )
             .lineLimit(1...5)
@@ -120,9 +123,7 @@ struct ChatView: View {
 
 // MARK: - Preview
 
-struct ChatView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview {
         ChatView(viewModel: ChatViewModel(apiService: APIClient()))
             .environment(\.locale, .init(identifier: "en"))
-    }
 }

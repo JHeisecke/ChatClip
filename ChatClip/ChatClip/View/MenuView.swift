@@ -33,19 +33,21 @@ struct MenuView: View {
                 Text("label.chat")
             }
             .tag(1)
-            Text("Tab Content 2")
-                .tabItem {
-                    Image(systemName: "bell.fill")
-                    Text("label.reminder")
-                }
-                .tag(2)
+            ReminderView(
+                viewModel: viewModel.reminderViewModel
+            )
+            .tabItem {
+                Image(systemName: "bell.fill")
+                Text("label.reminder")
+            }
+            .tag(2)
         }
         .createImages(
             toggleDarkMode: toggleDarkMode,
             currentImage: $currentImage,
             previousImage: $previousImage,
             activateDarkMode: $activateDarkMode
-         )
+        )
         .overlay {
             GeometryReader { geometry in
                 let size = geometry.size

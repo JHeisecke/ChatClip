@@ -23,6 +23,18 @@ extension UIColor {
     static var bone: UIColor {
         .init(named: "bone")!
     }
+    static var grayedBlue: UIColor {
+        .init(named: "grayedBlue")!
+    }
+    static var niceBlue: UIColor {
+        .init(named: "niceBlue")!
+    }
+    static var primaryBackground: UIColor {
+        .init(named: "primaryBackground")!
+    }
+    static var secondaryAccentColor: UIColor {
+        .init(named: "secondaryAccentColor")!
+    }
 }
 
 extension Color {
@@ -41,5 +53,16 @@ extension Color {
     static var bone: Color {
         .init(uiColor: .bone)
     }
-    
+    static var grayedBlue: Color {
+        .init(uiColor: .grayedBlue)
+    }
+    static var niceBlue: Color {
+        .init(uiColor: .niceBlue)
+    }
+    static var primaryBackground: Color {
+        .init(uiColor: .primaryBackground)
+    }
+    static var secondaryAccentColor: Color {
+        .init(uiColor: .secondaryAccentColor)
+    }
 }

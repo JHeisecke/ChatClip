@@ -16,7 +16,7 @@
 "label.message" = "Mensaje (Opcional)";
 "label.number" = "Número de Teléfono";
 "label.chat" = "Chat";
-"label.reminder" = "Recordatorio";
+"label.reminder" = "Recordatorios";
 
 //MARK: - Actions
 
