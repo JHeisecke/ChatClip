@@ -14,7 +14,8 @@ struct ReminderView: View {
     var body: some View {
         VStack {
             List {
-                reminder
+                ForEach(viewModel.reminders, id: \.id) { reminder in
+                    reminderView(reminder)
                     .swipeActions(edge: .leading) {
                         Button {
                             // TODO: Edit reminder
@@ -31,6 +32,7 @@ struct ReminderView: View {
                         }
                         .tint(.red)
                     }
+                }
             }
             .listRowSpacing(20)
             .scrollContentBackground(.hidden)
@@ -47,7 +49,7 @@ struct ReminderView: View {
         .background(Color.secondaryAccentColor)
         .overlay(alignment: .topLeading) {
             Button {
-                // Popup add reminder
+                // TODO: call popup to add reminder
             } label: {
                 Image(systemName: "plus")
                     .font(.title2)
@@ -57,21 +59,27 @@ struct ReminderView: View {
         }
     }
     
-    var reminder: some View {
-        VStack(alignment: .leading, spacing: 5) {
-            Text("Text Mr. Roberts to fix the fan")
-                .font(.glacial(.regular, size: 17))
-                .lineLimit(1)
-            Text("+595983458746")
-                .font(.glacial(.regular, size: 16))
-            HStack {
-                Image(systemName: "alarm")
-                Text("8:15 AM")
-                    .font(.glacial(.regular, size: 15))
+    func reminderView(_ reminder: Reminder) -> some View {
+        return VStack(alignment: .leading, spacing: 5) {
+            if let title = reminder.title {
+                Text(title)
+                    .font(.glacial(.regular, size: 17))
+                    .lineLimit(1)
             }
-            Text("Hi sir! I need to inform you that the fan stopped working since two days ago, I was hoping you could help with that. Thanks!")
-                .font(.glacial(.regular, size: 14))
-                .lineLimit(2)
+            Text(reminder.number)
+                .font(.glacial(.regular, size: 16))
+            if let time = reminder.time {
+                HStack {
+                    Image(systemName: "alarm")
+                    Text("8:15 AM")
+                        .font(.glacial(.regular, size: 15))
+                }
+            }
+            if let message = reminder.message {
+                Text(message)
+                    .font(.glacial(.regular, size: 14))
+                    .lineLimit(2)
+            }
         }
         .foregroundStyle(Color.primaryBackground)
         .frame(maxWidth: .infinity, alignment: .leading)

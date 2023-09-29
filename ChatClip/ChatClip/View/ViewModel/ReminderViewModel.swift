@@ -11,5 +11,5 @@ final class ReminderViewModel {
     
     // MARK: - Properties
 
-    private(set) var reminders: RemindersList = []
+    private(set) var reminders: RemindersList = Reminder.reminders
 }
