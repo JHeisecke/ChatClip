@@ -11,7 +11,10 @@ struct MenuView: View {
     
     var viewModel: MenuViewModel
     
+    // MARK: - Properties
+    
     @State private var activeTab: Int = 0
+    @State private var showReminderSheet: Bool = false
     
     // Interface Style
     @AppStorage("toggleDarkMode") private var toggleDarkMode: Bool = false
@@ -34,6 +37,7 @@ struct MenuView: View {
             }
             .tag(1)
             ReminderView(
+                showReminderSheet: $showReminderSheet,
                 viewModel: viewModel.reminderViewModel
             )
             .tabItem {
@@ -99,6 +103,7 @@ struct MenuView: View {
             Button {
                 /// Whenever the mode is changed, the current and previous state of the view will be captured. Once the snapshots have been taken, they'll be used as an overlay view to smoothly transition from one state to another via the masking effect
                 toggleDarkMode.toggle()
+                print("Pressed theme button, rect: \(buttonRect)")
             } label: {
                 Image(systemName: toggleDarkMode ? "sun.max.fill" : "moon.fill")
                     .font(.title2)
@@ -107,12 +112,17 @@ struct MenuView: View {
                     .frame(width: 40, height: 40)
             }
             .rect { rect in
+                print("Setting rect: \(rect)")
                 buttonRect = rect
             }
             .padding(10)
             .disabled(currentImage != nil || previousImage != nil || maskAnimation)
         }
         .preferredColorScheme(activateDarkMode ? .dark : .light)
+        .sheet(isPresented: $showReminderSheet) {
+            ReminderFormView(showReminderSheet: $showReminderSheet)
+                .presentationDetents([.large])
+        }
     }
 }
 

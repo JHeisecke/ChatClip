@@ -26,7 +26,7 @@ struct ChatView: View {
                     Spacer()
                     RoundedRectangle(cornerRadius: 30)
                         .frame(width: width, height: height)
-                        .foregroundColor(Color.bone)
+                        .foregroundColor(Color.secondaryBackground)
                         .padding(.bottom)
                         .overlay {
                             floatingCard(width: width)
@@ -47,7 +47,7 @@ struct ChatView: View {
                             .font(.glacial(.regular, size: 18))
                             .foregroundColor(Color.tealGreenDark)
                             .padding()
-                            .background(viewModel.disableButton ? Color.bone : Color.lime)
+                            .background(viewModel.disableButton ? Color.secondaryBackground : Color.lime)
                             .cornerRadius(10)
                             .padding(5)
                     }

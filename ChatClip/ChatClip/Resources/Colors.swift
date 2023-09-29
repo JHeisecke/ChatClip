@@ -20,8 +20,8 @@ extension UIColor {
     static var lightGreen: UIColor {
         .init(named: "lightGreen")!
     }
-    static var bone: UIColor {
-        .init(named: "bone")!
+    static var secondaryBackground: UIColor {
+        .init(named: "secondaryBackground")!
     }
     static var grayedBlue: UIColor {
         .init(named: "grayedBlue")!
@@ -50,8 +50,8 @@ extension Color {
     static var lightGreen: Color {
         .init(uiColor: .lightGreen)
     }
-    static var bone: Color {
-        .init(uiColor: .bone)
+    static var secondaryBackground: Color {
+        .init(uiColor: .secondaryBackground)
     }
     static var grayedBlue: Color {
         .init(uiColor: .grayedBlue)
