@@ -23,22 +23,6 @@ struct ReminderView: View {
                         viewModel.chat(with: reminder)
                     } label: {
                         reminderView(reminder)
-                            .swipeActions(edge: .leading) {
-                                Button {
-                                    // TODO: Edit reminder
-                                } label: {
-                                    Image(systemName: "pencil")
-                                }
-                                .tint(.blue)
-                            }
-                            .swipeActions(edge: .trailing) {
-                                Button {
-                                    // TODO: Delete reminder
-                                } label: {
-                                    Image(systemName: "trash")
-                                }
-                                .tint(.red)
-                            }
                     }
                     .listRowBackground(Color.secondaryBackground)
                 }

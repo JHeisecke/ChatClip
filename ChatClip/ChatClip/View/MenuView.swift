@@ -119,10 +119,6 @@ struct MenuView: View {
             .disabled(currentImage != nil || previousImage != nil || maskAnimation)
         }
         .preferredColorScheme(activateDarkMode ? .dark : .light)
-        .sheet(isPresented: $showReminderSheet) {
-            ReminderFormView(showReminderSheet: $showReminderSheet)
-                .presentationDetents([.large])
-        }
     }
 }
 
