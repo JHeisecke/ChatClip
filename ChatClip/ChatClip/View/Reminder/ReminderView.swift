@@ -23,6 +23,20 @@ struct ReminderView: View {
                         viewModel.chat(with: reminder)
                     } label: {
                         reminderView(reminder)
+                            .swipeActions(edge: .leading) {
+                                Button {
+                                    
+                                } label: {
+                                    Image(systemName: "pencil")
+                                }
+                            }
+                            .swipeActions(edge: .leading) {
+                                Button {
+                                    
+                                } label: {
+                                    Image(systemName: "trash")
+                                }
+                            }
                     }
                     .listRowBackground(Color.secondaryBackground)
                 }
@@ -38,7 +52,7 @@ struct ReminderView: View {
             } label: {
                 Image(systemName: "plus")
                     .font(.title2)
-                    .foregroundStyle(Color.accentColor)
+                    .foregroundStyle(Color.accent)
                     .frame(width: 40, height: 40)
             }
         }

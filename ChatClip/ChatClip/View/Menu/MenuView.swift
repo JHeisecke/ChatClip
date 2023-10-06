@@ -32,8 +32,7 @@ struct MenuView: View {
                 viewModel: viewModel.chatViewModel
             )
             .tabItem {
-                Image(systemName: "paperclip")
-                Text("label.chat")
+                Label("label.chat", systemImage: "paperclip")
             }
             .tag(1)
             ReminderView(
@@ -41,11 +40,11 @@ struct MenuView: View {
                 viewModel: viewModel.reminderViewModel
             )
             .tabItem {
-                Image(systemName: "bell.fill")
-                Text("label.reminder")
+                Label("label.reminder", systemImage: "bell.fill")
             }
             .tag(2)
         }
+        .accentColor(Color.accent)
         .createImages(
             toggleDarkMode: toggleDarkMode,
             currentImage: $currentImage,
@@ -107,7 +106,7 @@ struct MenuView: View {
             } label: {
                 Image(systemName: toggleDarkMode ? "sun.max.fill" : "moon.fill")
                     .font(.title2)
-                    .foregroundStyle(Color.accentColor)
+                    .foregroundStyle(Color.primaryBackground)
                     .symbolEffect(.bounce, value: toggleDarkMode)
                     .frame(width: 40, height: 40)
             }
@@ -119,6 +118,10 @@ struct MenuView: View {
             .disabled(currentImage != nil || previousImage != nil || maskAnimation)
         }
         .preferredColorScheme(activateDarkMode ? .dark : .light)
+        .sheet(isPresented: $showReminderSheet) {
+            ReminderFormView(showReminderSheet: $showReminderSheet)
+                .presentationDetents([.large])
+        }
     }
 }
 

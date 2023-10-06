@@ -35,6 +35,9 @@ extension UIColor {
     static var secondaryAccentColor: UIColor {
         .init(named: "secondaryAccentColor")!
     }
+    static var accent: UIColor {
+        .init(named: "AccentColor")!
+    }
 }
 
 extension Color {
@@ -64,5 +67,8 @@ extension Color {
     }
     static var secondaryAccentColor: Color {
         .init(uiColor: .secondaryAccentColor)
+    }
+    static var accent: Color {
+        .init(uiColor: .accent)
     }
 }
