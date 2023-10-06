@@ -148,12 +148,10 @@
 		006C2DBC2AB49847000DF11C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0092ECBD2ACB809A0063A0F9 /* Chat */,
+				0092ECBC2ACB808F0063A0F9 /* Menu */,
+				0092ECBA2ACB806C0063A0F9 /* Reminder */,
 				00FE1C7D2AB4E7B00071AA79 /* Utils */,
-				00FE1C802AB4E81F0071AA79 /* ViewModel */,
-				006C2DBF2AB498DF000DF11C /* ChatView.swift */,
-				0093C28A2AC60CB60061768B /* MenuView.swift */,
-				0093C28E2AC614200061768B /* ReminderView.swift */,
-				0092ECB52AC716BF0063A0F9 /* ReminderFormView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +201,42 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		0092ECBA2ACB806C0063A0F9 /* Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				0092ECBB2ACB80830063A0F9 /* ViewModel */,
+				0092ECB52AC716BF0063A0F9 /* ReminderFormView.swift */,
+				0093C28E2AC614200061768B /* ReminderView.swift */,
+			);
+			path = Reminder;
+			sourceTree = "<group>";
+		};
+		0092ECBB2ACB80830063A0F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0093C2922AC65F6F0061768B /* ReminderViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0092ECBC2ACB808F0063A0F9 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				0093C28C2AC611B60061768B /* MenuViewModel.swift */,
+				0093C28A2AC60CB60061768B /* MenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		0092ECBD2ACB809A0063A0F9 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				00FE1C882AB4EA250071AA79 /* ChatViewModel.swift */,
+				006C2DBF2AB498DF000DF11C /* ChatView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		00FE1C7D2AB4E7B00071AA79 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,16 +244,6 @@
 				006C2DC32AB49EF0000DF11C /* ChatClipTextFieldStyle.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		00FE1C802AB4E81F0071AA79 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				00FE1C882AB4EA250071AA79 /* ChatViewModel.swift */,
-				0093C28C2AC611B60061768B /* MenuViewModel.swift */,
-				0093C2922AC65F6F0061768B /* ReminderViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		00FE1C8B2AB4FA0F0071AA79 /* Storage */ = {
