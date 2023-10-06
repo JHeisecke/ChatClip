@@ -14,7 +14,6 @@ struct MenuView: View {
     // MARK: - Properties
     
     @State private var activeTab: Int = 0
-    @State private var showReminderSheet: Bool = false
     
     // Interface Style
     @AppStorage("toggleDarkMode") private var toggleDarkMode: Bool = false
@@ -36,7 +35,6 @@ struct MenuView: View {
             }
             .tag(1)
             ReminderView(
-                showReminderSheet: $showReminderSheet,
                 viewModel: viewModel.reminderViewModel
             )
             .tabItem {
@@ -118,10 +116,6 @@ struct MenuView: View {
             .disabled(currentImage != nil || previousImage != nil || maskAnimation)
         }
         .preferredColorScheme(activateDarkMode ? .dark : .light)
-        .sheet(isPresented: $showReminderSheet) {
-            ReminderFormView(showReminderSheet: $showReminderSheet)
-                .presentationDetents([.large])
-        }
     }
 }
 

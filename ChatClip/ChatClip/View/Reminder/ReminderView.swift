@@ -11,7 +11,7 @@ struct ReminderView: View {
     
     // MARK: Properties
     
-    @Binding var showReminderSheet: Bool
+    @State private var showReminderSheet: Bool = false
     
     var viewModel: ReminderViewModel
     
@@ -56,6 +56,10 @@ struct ReminderView: View {
                     .frame(width: 40, height: 40)
             }
         }
+        .sheet(isPresented: $showReminderSheet) {
+            ReminderFormView(showReminderSheet: $showReminderSheet)
+                .presentationDetents([.large])
+        }
     }
     
     // MARK: List Component
@@ -92,6 +96,6 @@ struct ReminderView: View {
 
 #Preview {
     TabView {
-        ReminderView(showReminderSheet: .constant(false), viewModel: ReminderViewModel(apiService: APIClient()))
+        ReminderView(viewModel: ReminderViewModel(apiService: APIClient()))
     }
 }
