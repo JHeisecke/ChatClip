@@ -11,7 +11,3 @@ struct UserDefaultsKeys {
     static let lastCountryCodeUsed = "lastCountryCodeUsed"
     static let reminders = "reminders"
 }
-
-struct DateFormats {
-    static let ddMMyyyyHHmm = "dd/mm/yyyy'T'HH:mm"
-}

@@ -13,6 +13,13 @@ final class ReminderViewModel {
 
     private(set) var reminders: RemindersList = AppData.reminders
     
+    var reminderCellViewModels: [ReminderCellViewModel] {
+        Reminder.previews.map(ReminderCellViewModel.init)
+    }
+    
+    var reminderFormViewModel: ReminderFormViewModel {
+        ReminderFormViewModel(apiService: APIClient(), reminder: nil)
+    }
     
     private let apiService: APIService
     
@@ -27,4 +34,5 @@ final class ReminderViewModel {
     func chat(with reminder: Reminder) {
         apiService.sendWhatsappMessage(to: reminder.number, with: "", text: reminder.message)
     }
+    
 }

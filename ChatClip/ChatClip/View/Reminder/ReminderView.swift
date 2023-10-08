@@ -30,13 +30,15 @@ struct ReminderView: View {
                                     Image(systemName: "pencil")
                                 }
                             }
-                            .swipeActions(edge: .leading) {
+                            .tint(.blue)
+                            .swipeActions(edge: .trailing) {
                                 Button {
                                     
                                 } label: {
                                     Image(systemName: "trash")
                                 }
                             }
+                            .tint(.red)
                     }
                     .listRowBackground(Color.secondaryBackground)
                 }
@@ -57,7 +59,7 @@ struct ReminderView: View {
             }
         }
         .sheet(isPresented: $showReminderSheet) {
-            ReminderFormView(showReminderSheet: $showReminderSheet)
+            ReminderFormView(showReminderSheet: $showReminderSheet, viewModel: viewModel.reminderFormViewModel)
                 .presentationDetents([.large])
         }
     }

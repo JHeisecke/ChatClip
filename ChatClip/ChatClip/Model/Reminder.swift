@@ -15,8 +15,15 @@ struct Reminder: Identifiable, Codable {
     var title: String?
     var time: Date?
     var message: String?
+}
+
+extension Reminder {
     
-    static var reminders: RemindersList {
+    static var preview: Reminder {
+        previews[1]
+    }
+    
+    static var previews: RemindersList {
         [
             Reminder(id: 0, number: "+59598345948"),
             Reminder(id: 1, number: "+59598345948", title: "Text Mr. Rogers"),

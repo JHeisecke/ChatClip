@@ -42,7 +42,7 @@ struct MenuView: View {
             }
             .tag(2)
         }
-        .accentColor(Color.accent)
+        .tint(Color.accent)
         .createImages(
             toggleDarkMode: toggleDarkMode,
             currentImage: $currentImage,
@@ -100,7 +100,6 @@ struct MenuView: View {
             Button {
                 /// Whenever the mode is changed, the current and previous state of the view will be captured. Once the snapshots have been taken, they'll be used as an overlay view to smoothly transition from one state to another via the masking effect
                 toggleDarkMode.toggle()
-                print("Pressed theme button, rect: \(buttonRect)")
             } label: {
                 Image(systemName: toggleDarkMode ? "sun.max.fill" : "moon.fill")
                     .font(.title2)
@@ -109,7 +108,6 @@ struct MenuView: View {
                     .frame(width: 40, height: 40)
             }
             .rect { rect in
-                print("Setting rect: \(rect)")
                 buttonRect = rect
             }
             .padding(10)

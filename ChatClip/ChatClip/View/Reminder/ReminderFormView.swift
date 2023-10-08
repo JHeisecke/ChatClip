@@ -11,16 +11,14 @@ struct ReminderFormView: View {
     
     @Binding var showReminderSheet: Bool
     
-    
     @State private var title: String = ""
     @State private var phoneNumber: String = ""
     @State private var message: String = ""
     
     @State private var useDate: Bool = false
-    @State private var showDatePicker: Bool = false
-    @State private var useTime: Bool = false
     @State private var remindMeDate: Date = Date()
-    @State private var remindMeTime: Date = Date()
+    
+    @Bindable var viewModel: ReminderFormViewModel
     
     var body: some View {
         NavigationView {
@@ -38,7 +36,6 @@ struct ReminderFormView: View {
                 }
                 Section {
                     dateForm
-                    //timeForm
                 } header: {
                     Text("Remind me at:")
                 }
@@ -62,7 +59,6 @@ struct ReminderFormView: View {
                     Button {
                         showReminderSheet.toggle()
                         useDate = false
-                        useTime = false
                         title = ""
                         phoneNumber = ""
                         message = ""
@@ -78,14 +74,15 @@ struct ReminderFormView: View {
     
     var dateForm: some View {
         Group {
-            Toggle(isOn: $useDate.animation()) {
+            Toggle(isOn: $useDate) {
                 Label(
                     title: {
                         VStack(alignment: .leading) {
                             Text("Date")
                             if useDate {
-                                Text("Today")
+                                Text(viewModel.remindMeTime)
                                     .font(.caption)
+                                    .foregroundStyle(.blue)
                             }
                         }
                     }, icon: {
@@ -93,53 +90,22 @@ struct ReminderFormView: View {
                     }
                 )
             }
-            if showDatePicker {
+            if useDate {
                 DatePicker(
                     "",
-                    selection: $remindMeDate,
-                    displayedComponents: .date
+                    selection: $remindMeDate
                 )
-                .datePickerStyle(.wheel)
+                .datePickerStyle(.graphical)
                 .symbolEffect(.bounce, value: useDate)
-            }
-        }
-    }
-    
-    var timeForm: some View {
-        Group {
-            Toggle(isOn: $useTime.animation()) {
-                Label(
-                    title: {
-                        VStack(alignment: .leading) {
-                            Text("Time")
-                            if useTime {
-                                Text("Today")
-                                    .font(.caption)
-                            }
-                        }
-                    }, icon: {
-                        Image(systemName: "clock")
-                    }
-                )
-            }            
-            if useTime {
-                DatePicker(
-                    "",
-                    selection: $remindMeTime,
-                    displayedComponents: .hourAndMinute
-                )
-                .datePickerStyle(.wheel)
-                .symbolEffect(.bounce, value: useTime)
-            }
-        }
-        .onChange(of: useTime) { _, newValue in
-            if newValue {
-                useDate = newValue
             }
         }
     }
 }
 
 #Preview {
-    ReminderFormView(showReminderSheet: .constant(true))
+    ReminderFormView(showReminderSheet: .constant(true),
+                     viewModel: .init(
+                        apiService: APIClient(), reminder: Reminder.preview
+                     )
+    )
 }
