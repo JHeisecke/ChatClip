@@ -23,7 +23,7 @@ struct ReminderCellView: View {
             if let time = viewModel.reminderTime {
                 HStack {
                     Image(systemName: "alarm")
-                    Text("8:15 AM")
+                    Text("\(time)")
                         .font(.glacial(.regular, size: 15))
                 }
             }
@@ -35,12 +35,20 @@ struct ReminderCellView: View {
         }
         .foregroundStyle(Color.primaryBackground)
         .frame(maxWidth: .infinity, alignment: .leading)
+        .onTapGesture {
+            viewModel.chat()
+        }
         .padding(.vertical, 5)
     }
 }
 
 #Preview {
     List {
-        ReminderCellView(viewModel: ReminderCellViewModel(reminder: Reminder.preview))
+        ReminderCellView(
+            viewModel: ReminderCellViewModel(
+                apiService: APIClient(),
+                reminder: Reminder.preview
+            )
+        )
     }
 }

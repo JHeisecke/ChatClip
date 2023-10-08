@@ -7,17 +7,15 @@
 
 import Foundation
 
-final class ReminderCellViewModel {
+final class ReminderCellViewModel: Identifiable {
     
     // MARK: - Properties
+    private let apiService: APIService
+    //TODO: set private
+    let reminder: Reminder
     
-    private let reminder: Reminder
-    
-    
-    // MARK: - Initialization
-    
-    init(reminder: Reminder) {
-        self.reminder = reminder
+    var id: String {
+        reminder.id
     }
     
     var reminderTitle: String? {
@@ -29,10 +27,23 @@ final class ReminderCellViewModel {
     }
     
     var reminderTime: String? {
-        "Today"
+        reminder.time?.formatted(date: .abbreviated, time: .shortened)
     }
     
     var reminderMessage: String? {
         reminder.message
+    }
+    
+    // MARK: - Initialization
+    
+    init(apiService: APIService, reminder: Reminder) {
+        self.apiService = apiService
+        self.reminder = reminder
+    }
+
+    // MARK: - Methods
+    
+    func chat() {
+        apiService.sendWhatsappMessage(to: reminder.number, with: "", text: reminder.message)
     }
 }

@@ -10,6 +10,6 @@ import Foundation
 struct AppData {
     @Storage(key: UserDefaultsKeys.lastCountryCodeUsed, defaultValue: nil)
     static var lastCountryCodeUsed: String?
-    @Storage(key: UserDefaultsKeys.reminders, defaultValue: Reminder.previews)
+    @Storage(key: UserDefaultsKeys.reminders, defaultValue: [])
     static var reminders: RemindersList
 }

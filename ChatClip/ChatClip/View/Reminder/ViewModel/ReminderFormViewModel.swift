@@ -15,6 +15,7 @@ final class ReminderFormViewModel {
     var title = ""
     var phoneNumber = ""
     var message = ""
+    var useDate = false
     var reminderDate = Date()
     
     private var reminder: Reminder?
@@ -42,8 +43,11 @@ final class ReminderFormViewModel {
     }
     
     func saveReminder() {
-        print(title, phoneNumber, message, reminderDate)
-        resetVariables()
-        //TODO: Save Reminder
+        let reminder = Reminder(id: "\(reminderDate.timeIntervalSince1970)", number: phoneNumber, title: title, time: useDate ? reminderDate : nil, message: message)
+        apiService.scheduleAlert(reminder, completion: { [weak self] result in
+            guard let self else { return }
+            AppData.reminders.append(reminder)
+            resetVariables()
+        })
     }
 }

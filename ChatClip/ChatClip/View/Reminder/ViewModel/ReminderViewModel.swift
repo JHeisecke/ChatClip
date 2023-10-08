@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Observable
 final class ReminderViewModel {
     
     // MARK: - Properties
@@ -14,20 +15,18 @@ final class ReminderViewModel {
     private(set) var reminders: RemindersList = AppData.reminders
     
     var reminderCellViewModels: [ReminderCellViewModel] {
-        Reminder.previews.map(ReminderCellViewModel.init)
+        reminders.map { ReminderCellViewModel(apiService: APIClient(), reminder: $0) }
     }
     
     var reminderFormViewModel: ReminderFormViewModel {
         ReminderFormViewModel(apiService: APINotificationClient(), reminder: nil)
     }
     
-    private let apiService: APIService
     private let notificationService: APINotificationService
     
     // MARK: - Initialization
 
-    init(apiService: APIService, notificationService: APINotificationService) {
-        self.apiService = apiService
+    init(notificationService: APINotificationService) {
         self.notificationService = notificationService
     }
     
@@ -43,8 +42,14 @@ final class ReminderViewModel {
         }
     }
     
-    func chat(with reminder: Reminder) {
-        apiService.sendWhatsappMessage(to: reminder.number, with: "", text: reminder.message)
+    
+    func deleteReminder(_ reminder: Reminder) {
+        reminders.removeAll(where: { $0.id == reminder.id })
+        AppData.reminders = reminders
+        notificationService.removeNotification(reminder)
     }
     
+    func editReminder() {
+        
+    }
 }

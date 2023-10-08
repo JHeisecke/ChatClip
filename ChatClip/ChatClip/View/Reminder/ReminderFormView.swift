@@ -10,9 +10,6 @@ import SwiftUI
 struct ReminderFormView: View {
     
     @Binding var showReminderSheet: Bool
-    
-    @State private var useDate: Bool = false
-    
     @Bindable var viewModel: ReminderFormViewModel
     
     var body: some View {
@@ -56,7 +53,6 @@ struct ReminderFormView: View {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
                         showReminderSheet.toggle()
-                        useDate = false
                         viewModel.resetVariables()
                     } label: {
                         Text("Cancel")
@@ -69,12 +65,12 @@ struct ReminderFormView: View {
     
     var dateForm: some View {
         Group {
-            Toggle(isOn: $useDate.animation()) {
+            Toggle(isOn: $viewModel.useDate.animation()) {
                 Label(
                     title: {
                         VStack(alignment: .leading) {
                             Text("Date")
-                            if useDate {
+                            if viewModel.useDate {
                                 Text(viewModel.remindMeTime)
                                     .font(.caption)
                                     .foregroundStyle(.blue)
@@ -85,14 +81,14 @@ struct ReminderFormView: View {
                     }
                 )
             }
-            if useDate {
+            if viewModel.useDate {
                 DatePicker(
                     "",
                     selection: $viewModel.reminderDate,
                     in: Date()...
                 )
                 .datePickerStyle(.graphical)
-                .symbolEffect(.bounce, value: useDate)
+                .symbolEffect(.bounce, value: viewModel.useDate)
             }
         }
     }
