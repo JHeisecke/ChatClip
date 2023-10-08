@@ -8,6 +8,7 @@
 import UIKit
 
 struct APIClient: APIService {
+    
     func sendWhatsappMessage(to phoneNumber: String, with countryCode: String, text message: String?) {
         let completedNumber = "\(countryCode)\(phoneNumber)"
         if let url = URL(string: Endpoints.initiateWhatsApp(with: completedNumber, send: message)) {
@@ -24,4 +25,5 @@ struct APIClient: APIService {
         let data = try Data(contentsOf: url)
         return try JSONDecoder().decode(CountryPhoneCodes.self, from: data)
     }
+    
 }

@@ -62,6 +62,9 @@ struct ReminderView: View {
             ReminderFormView(showReminderSheet: $showReminderSheet, viewModel: viewModel.reminderFormViewModel)
                 .presentationDetents([.large])
         }
+        .onAppear {
+            viewModel.onAppear()
+        }
     }
     
     // MARK: List Component
@@ -98,6 +101,6 @@ struct ReminderView: View {
 
 #Preview {
     TabView {
-        ReminderView(viewModel: ReminderViewModel(apiService: APIClient()))
+        ReminderView(viewModel: ReminderViewModel(apiService: APIClient(), notificationService: APINotificationClient()))
     }
 }

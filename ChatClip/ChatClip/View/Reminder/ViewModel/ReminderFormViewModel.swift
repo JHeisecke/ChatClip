@@ -19,7 +19,7 @@ final class ReminderFormViewModel {
     
     private var reminder: Reminder?
     
-    private let apiService: APIService
+    private let apiService: APINotificationService
     
     var remindMeTime: String {
         reminderDate.formatted(date: .abbreviated, time: .shortened)
@@ -27,8 +27,23 @@ final class ReminderFormViewModel {
     
     // MARK: - Initialization
 
-    init(apiService: APIService, reminder: Reminder?) {
+    init(apiService: APINotificationService, reminder: Reminder?) {
         self.apiService = apiService
         self.reminder = reminder
+    }
+    
+    // MARK: - Methods
+
+    func resetVariables() {
+        title = ""
+        phoneNumber = ""
+        message = ""
+        reminderDate = Date()
+    }
+    
+    func saveReminder() {
+        print(title, phoneNumber, message, reminderDate)
+        resetVariables()
+        //TODO: Save Reminder
     }
 }
