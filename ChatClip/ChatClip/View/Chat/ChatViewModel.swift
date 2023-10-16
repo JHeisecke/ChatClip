@@ -6,15 +6,21 @@
 //
 
 import Foundation
+import Combine
 
 @Observable
 final class ChatViewModel {
     
     // MARK: - Properties
-
+    
+    private var cancellables: Set<AnyCancellable> = []
+    
+    private let apiService: APIService
+    private let store: Store
+    
     private(set) var countryCodes: CountryPhoneCodes = []
     
-    var countryCode = AppData.lastCountryCodeUsed ?? ""
+    var countryCode = ""
     var message = ""
     var phoneNumber = "" {
         didSet {
@@ -26,21 +32,26 @@ final class ChatViewModel {
         }
     }
     
-    private let apiService: APIService
-    
-    // MARK: - Initialization
-
-    init(apiService: APIService) {
-        self.apiService = apiService
-    }
-
-    // MARK: -
-    
     var disableButton: Bool {
         return phoneNumber == "" || phoneNumber == "0"
     }
     
+    // MARK: - Initialization
+    
+    init(apiService: APIService, store: Store) {
+        self.apiService = apiService
+        self.store = store
+    }
+    
     // MARK: - Public API
+    
+    func onAppear() {
+        store.lastCountryCodeUsedPublisher
+            .sink { [weak self] in
+                self?.countryCode = $0
+            }
+            .store(in: &cancellables)
+    }
     
     func chat() {
         if let firstNumber = phoneNumber.first, firstNumber == "0" {

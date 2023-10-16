@@ -124,6 +124,6 @@ struct ChatView: View {
 // MARK: - Preview
 
 #Preview {
-        ChatView(viewModel: ChatViewModel(apiService: APIClient()))
+    ChatView(viewModel: ChatViewModel(apiService: APIClient(), store: PreviewsStore()))
             .environment(\.locale, .init(identifier: "en"))
 }

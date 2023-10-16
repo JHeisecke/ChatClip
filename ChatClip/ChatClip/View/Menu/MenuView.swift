@@ -34,7 +34,7 @@ struct MenuView: View {
                 Label("label.chat", systemImage: "paperclip")
             }
             .tag(1)
-            ReminderView(
+            RemindersView(
                 viewModel: viewModel.reminderViewModel
             )
             .tabItem {

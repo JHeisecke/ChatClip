@@ -20,7 +20,8 @@ final class ReminderFormViewModel {
     
     private var reminder: Reminder?
     
-    private let apiService: APINotificationService
+    private let notificationService: APINotificationService
+    private let store: Store
     
     var remindMeTime: String {
         reminderDate.formatted(date: .abbreviated, time: .shortened)
@@ -28,9 +29,12 @@ final class ReminderFormViewModel {
     
     // MARK: - Initialization
 
-    init(apiService: APINotificationService, reminder: Reminder?) {
-        self.apiService = apiService
-        self.reminder = reminder
+    init(
+        notificationService: APINotificationService,
+        store: Store
+    ) {
+        self.notificationService = notificationService
+        self.store = store
     }
     
     // MARK: - Methods
@@ -44,9 +48,14 @@ final class ReminderFormViewModel {
     
     func saveReminder() {
         let reminder = Reminder(id: "\(reminderDate.timeIntervalSince1970)", number: phoneNumber, title: title, time: useDate ? reminderDate : nil, message: message)
-        apiService.scheduleAlert(reminder, completion: { [weak self] result in
+        notificationService.scheduleAlert(reminder, completion: { [weak self] result in
             guard let self else { return }
-            AppData.reminders.append(reminder)
+            do {
+                try store.addReminder(reminder)
+            } catch {
+                print("Unable to save reminder \(reminder). \(error)")
+                self.notificationService.removeNotification(reminder)
+            }
             resetVariables()
         })
     }

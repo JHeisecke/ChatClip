@@ -97,7 +97,7 @@ struct ReminderFormView: View {
 #Preview {
     ReminderFormView(showReminderSheet: .constant(true),
                      viewModel: .init(
-                        apiService: APINotificationClient(), reminder: Reminder.preview
+                        notificationService: APINotificationClient(), store: PreviewsStore()
                      )
     )
 }

@@ -11,10 +11,10 @@ final class MenuViewModel {
     
     /// Because we navigate from the cell to the location's view, we create the view model here
     var chatViewModel: ChatViewModel {
-        .init(apiService: APIClient())
+        .init(apiService: APIClient(), store: UserDefaults.standard)
     }
     
-    var reminderViewModel: ReminderViewModel {
-        .init(notificationService: APINotificationClient())
+    var reminderViewModel: RemindersViewModel {
+        .init(store: UserDefaults.standard, notificationService: APINotificationClient())
     }
 }

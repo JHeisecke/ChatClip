@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0001F8E42ADDA9CF0046BE48 /* PreviewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001F8E32ADDA9CF0046BE48 /* PreviewsStore.swift */; };
+		0001F8E62ADDA9E10046BE48 /* UserDefaults+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001F8E52ADDA9E10046BE48 /* UserDefaults+Store.swift */; };
+		0001F8E82ADDA9EE0046BE48 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001F8E72ADDA9EE0046BE48 /* Store.swift */; };
+		0001F8EB2ADDAAB50046BE48 /* UserDeaults+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001F8EA2ADDAAB50046BE48 /* UserDeaults+Helper.swift */; };
 		004EB1B22AC5DE4D0010CB39 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EB1B12AC5DE4D0010CB39 /* View+Extensions.swift */; };
 		004EB1B42AC5E0620010CB39 /* RectKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EB1B32AC5E0620010CB39 /* RectKey.swift */; };
 		0060EBE82AD32BFB005DCBAD /* APINotificationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060EBE72AD32BFB005DCBAD /* APINotificationClient.swift */; };
@@ -25,8 +29,8 @@
 		0092ECB62AC716BF0063A0F9 /* ReminderFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0092ECB52AC716BF0063A0F9 /* ReminderFormView.swift */; };
 		0093C28B2AC60CB60061768B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C28A2AC60CB60061768B /* MenuView.swift */; };
 		0093C28D2AC611B60061768B /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C28C2AC611B60061768B /* MenuViewModel.swift */; };
-		0093C28F2AC614200061768B /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C28E2AC614200061768B /* ReminderView.swift */; };
-		0093C2932AC65F6F0061768B /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C2922AC65F6F0061768B /* ReminderViewModel.swift */; };
+		0093C28F2AC614200061768B /* RemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C28E2AC614200061768B /* RemindersView.swift */; };
+		0093C2932AC65F6F0061768B /* RemindersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C2922AC65F6F0061768B /* RemindersViewModel.swift */; };
 		0093C2952AC65FB60061768B /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C2942AC65FB60061768B /* Reminder.swift */; };
 		00EABBCF2AD05F2000288879 /* ReminderFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EABBCE2AD05F2000288879 /* ReminderFormViewModel.swift */; };
 		00EABBD12AD05F9F00288879 /* ReminderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EABBD02AD05F9F00288879 /* ReminderCellView.swift */; };
@@ -38,13 +42,15 @@
 		00FE1C842AB4E85E0071AA79 /* CountryPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C832AB4E85E0071AA79 /* CountryPhone.swift */; };
 		00FE1C872AB4E9890071AA79 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C862AB4E9890071AA79 /* APIService.swift */; };
 		00FE1C892AB4EA250071AA79 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C882AB4EA250071AA79 /* ChatViewModel.swift */; };
-		00FE1C8D2AB4FA180071AA79 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C8C2AB4FA180071AA79 /* AppData.swift */; };
 		00FE1C8F2AB4FA700071AA79 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C8E2AB4FA700071AA79 /* Constants.swift */; };
-		00FE1C912AB4FAC10071AA79 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C902AB4FAC10071AA79 /* Storage.swift */; };
 		00FE1C942AB4FFBF0071AA79 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C932AB4FFBF0071AA79 /* UIApplication+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0001F8E32ADDA9CF0046BE48 /* PreviewsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewsStore.swift; sourceTree = "<group>"; };
+		0001F8E52ADDA9E10046BE48 /* UserDefaults+Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Store.swift"; sourceTree = "<group>"; };
+		0001F8E72ADDA9EE0046BE48 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		0001F8EA2ADDAAB50046BE48 /* UserDeaults+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDeaults+Helper.swift"; sourceTree = "<group>"; };
 		004EB1B12AC5DE4D0010CB39 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		004EB1B32AC5E0620010CB39 /* RectKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectKey.swift; sourceTree = "<group>"; };
 		0060EBE72AD32BFB005DCBAD /* APINotificationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINotificationClient.swift; sourceTree = "<group>"; };
@@ -65,8 +71,8 @@
 		0092ECB52AC716BF0063A0F9 /* ReminderFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFormView.swift; sourceTree = "<group>"; };
 		0093C28A2AC60CB60061768B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		0093C28C2AC611B60061768B /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
-		0093C28E2AC614200061768B /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
-		0093C2922AC65F6F0061768B /* ReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
+		0093C28E2AC614200061768B /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersView.swift; sourceTree = "<group>"; };
+		0093C2922AC65F6F0061768B /* RemindersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewModel.swift; sourceTree = "<group>"; };
 		0093C2942AC65FB60061768B /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		00EABBCE2AD05F2000288879 /* ReminderFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFormViewModel.swift; sourceTree = "<group>"; };
 		00EABBD02AD05F9F00288879 /* ReminderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCellView.swift; sourceTree = "<group>"; };
@@ -79,9 +85,7 @@
 		00FE1C832AB4E85E0071AA79 /* CountryPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPhone.swift; sourceTree = "<group>"; };
 		00FE1C862AB4E9890071AA79 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		00FE1C882AB4EA250071AA79 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
-		00FE1C8C2AB4FA180071AA79 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		00FE1C8E2AB4FA700071AA79 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		00FE1C902AB4FAC10071AA79 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		00FE1C932AB4FFBF0071AA79 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +100,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0001F8E22ADDA9BF0046BE48 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				0001F8E32ADDA9CF0046BE48 /* PreviewsStore.swift */,
+				0001F8E52ADDA9E10046BE48 /* UserDefaults+Store.swift */,
+				0001F8E72ADDA9EE0046BE48 /* Store.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		0001F8E92ADDAAA40046BE48 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0001F8EA2ADDAAB50046BE48 /* UserDeaults+Helper.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		004EB1AC2AC5D86B0010CB39 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,10 +217,11 @@
 		006C2DBE2AB49863000DF11C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0001F8E92ADDAAA40046BE48 /* Extensions */,
+				0001F8E22ADDA9BF0046BE48 /* Store */,
 				00FE1C712AB4E2370071AA79 /* Endpoints.swift */,
 				0060EBEB2AD32C84005DCBAD /* API */,
 				0060EBEC2AD32C9E005DCBAD /* Resources */,
-				00FE1C8B2AB4FA0F0071AA79 /* Storage */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -231,7 +254,7 @@
 			children = (
 				0092ECBB2ACB80830063A0F9 /* ViewModel */,
 				0092ECB52AC716BF0063A0F9 /* ReminderFormView.swift */,
-				0093C28E2AC614200061768B /* ReminderView.swift */,
+				0093C28E2AC614200061768B /* RemindersView.swift */,
 				00EABBD02AD05F9F00288879 /* ReminderCellView.swift */,
 			);
 			path = Reminder;
@@ -240,7 +263,7 @@
 		0092ECBB2ACB80830063A0F9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0093C2922AC65F6F0061768B /* ReminderViewModel.swift */,
+				0093C2922AC65F6F0061768B /* RemindersViewModel.swift */,
 				00EABBCE2AD05F2000288879 /* ReminderFormViewModel.swift */,
 				00EABBD22AD05FC800288879 /* ReminderCellViewModel.swift */,
 			);
@@ -272,15 +295,6 @@
 				006C2DC32AB49EF0000DF11C /* ChatClipTextFieldStyle.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		00FE1C8B2AB4FA0F0071AA79 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-				00FE1C902AB4FAC10071AA79 /* Storage.swift */,
-				00FE1C8C2AB4FA180071AA79 /* AppData.swift */,
-			);
-			path = Storage;
 			sourceTree = "<group>";
 		};
 		00FE1C922AB4FFB30071AA79 /* Extensions */ = {
@@ -369,31 +383,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				00FE1C942AB4FFBF0071AA79 /* UIApplication+Extensions.swift in Sources */,
+				0001F8E62ADDA9E10046BE48 /* UserDefaults+Store.swift in Sources */,
 				0060EBE82AD32BFB005DCBAD /* APINotificationClient.swift in Sources */,
 				006C2DC02AB498DF000DF11C /* ChatView.swift in Sources */,
 				006C2DCB2AB4AA8D000DF11C /* Colors.swift in Sources */,
 				0093C28D2AC611B60061768B /* MenuViewModel.swift in Sources */,
 				00EABBD12AD05F9F00288879 /* ReminderCellView.swift in Sources */,
-				0093C28F2AC614200061768B /* ReminderView.swift in Sources */,
+				0001F8E82ADDA9EE0046BE48 /* Store.swift in Sources */,
+				0093C28F2AC614200061768B /* RemindersView.swift in Sources */,
 				006C2DD42AB4DE61000DF11C /* Font.swift in Sources */,
 				00FE1C722AB4E2370071AA79 /* Endpoints.swift in Sources */,
 				00FE1C872AB4E9890071AA79 /* APIService.swift in Sources */,
-				0093C2932AC65F6F0061768B /* ReminderViewModel.swift in Sources */,
+				0093C2932AC65F6F0061768B /* RemindersViewModel.swift in Sources */,
 				006C2DC42AB49EF0000DF11C /* ChatClipTextFieldStyle.swift in Sources */,
 				0093C28B2AC60CB60061768B /* MenuView.swift in Sources */,
+				0001F8EB2ADDAAB50046BE48 /* UserDeaults+Helper.swift in Sources */,
 				00EABBD32AD05FC800288879 /* ReminderCellViewModel.swift in Sources */,
 				0092ECB62AC716BF0063A0F9 /* ReminderFormView.swift in Sources */,
 				006C2DC22AB49916000DF11C /* APIClient.swift in Sources */,
 				0093C2952AC65FB60061768B /* Reminder.swift in Sources */,
 				0060EBEA2AD32C73005DCBAD /* APINotificationService.swift in Sources */,
-				00FE1C8D2AB4FA180071AA79 /* AppData.swift in Sources */,
 				006C2DAE2AB49804000DF11C /* ChatClipApp.swift in Sources */,
 				00FE1C842AB4E85E0071AA79 /* CountryPhone.swift in Sources */,
+				0001F8E42ADDA9CF0046BE48 /* PreviewsStore.swift in Sources */,
 				00FE1C892AB4EA250071AA79 /* ChatViewModel.swift in Sources */,
 				00FE1C8F2AB4FA700071AA79 /* Constants.swift in Sources */,
 				004EB1B22AC5DE4D0010CB39 /* View+Extensions.swift in Sources */,
 				00EABBCF2AD05F2000288879 /* ReminderFormViewModel.swift in Sources */,
-				00FE1C912AB4FAC10071AA79 /* Storage.swift in Sources */,
 				004EB1B42AC5E0620010CB39 /* RectKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,7 +553,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatClip/Preview Content\"";
 				DEVELOPMENT_TEAM = UK87X7N6A9;
 				ENABLE_PREVIEWS = YES;
@@ -573,7 +589,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatClip/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = UK87X7N6A9;

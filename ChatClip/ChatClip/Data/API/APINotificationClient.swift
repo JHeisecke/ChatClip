@@ -21,7 +21,10 @@ struct APINotificationClient: APINotificationService {
     }
     
     func scheduleAlert(_ reminder: Reminder, completion: @escaping (Bool) -> Void) {
-        guard let dateToRemind = reminder.time else { return }
+        guard let dateToRemind = reminder.time else {
+            completion(true)
+            return
+        }
         let content = UNMutableNotificationContent()
         content.title = "Text to +\(reminder.number)"
         if let title = reminder.title {
