@@ -86,9 +86,9 @@ struct ChatView: View {
                         .foregroundColor(Color.secondaryAccentColor)
                 )
                 .keyboardType(.numberPad)
-                .font(.glacial(.regular, size: 18))
+                .font(.glacial(.regular, size: 17))
                 .textFieldStyle(ChatClipTextFieldStyle())
-                .frame(width: width*0.30)
+                .frame(width: width*0.26)
                 .foregroundColor(Color.primaryBackground)
                 TextField(
                     "",
@@ -98,7 +98,7 @@ struct ChatView: View {
                         .foregroundColor(Color.secondaryAccentColor)
                 )
                 .foregroundColor(Color.primaryBackground)
-                .font(.glacial(.regular, size: 18))
+                .font(.glacial(.regular, size: 17))
                 .textFieldStyle(ChatClipTextFieldStyle())
                 .keyboardType(.numberPad)
             }
