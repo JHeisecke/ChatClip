@@ -11,7 +11,7 @@ final class ReminderCellViewModel: Identifiable {
     
     // MARK: - Properties
     private let apiService: APIService
-    //TODO: set private
+
     let reminder: Reminder
     
     var id: String {
@@ -41,7 +41,7 @@ final class ReminderCellViewModel: Identifiable {
         self.reminder = reminder
     }
 
-    // MARK: - Methods
+    // MARK: - Public API
     
     func chat() {
         apiService.sendWhatsappMessage(to: reminder.number, with: "", text: reminder.message)

@@ -26,9 +26,11 @@ struct APINotificationClient: APINotificationService {
             return
         }
         let content = UNMutableNotificationContent()
-        content.title = "Text to +\(reminder.number)"
+        content.title = String(localized: "ChatClip reminds you to")
         if let title = reminder.title {
             content.body = title
+        } else {
+            content.body = String(localized: "Text to \(reminder.number)")
         }
         content.sound = .default
         

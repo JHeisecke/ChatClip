@@ -33,7 +33,7 @@ struct ChatView: View {
                         }
                         .shadow(radius: 10)
                         .overlay(alignment: .top) {
-                            Text("chatclip")
+                            Text("ChatClip")
                                 .foregroundColor(Color.tealGreenDark)
                                 .font(.glacial(.bold, size: 50))
                                 .foregroundColor(.cyan)
@@ -43,7 +43,7 @@ struct ChatView: View {
                     Button {
                         viewModel.chat()
                     } label: {
-                        Text("send")
+                        Text("Send Message")
                             .font(.glacial(.regular, size: 18))
                             .foregroundColor(Color.tealGreenDark)
                             .padding()
@@ -71,7 +71,7 @@ struct ChatView: View {
     func floatingCard(width: CGFloat) -> some View {
         VStack {
             Spacer()
-            Text("label.help")
+            Text("Send a Whatsapp message to an unsaved number")
                 .font(.glacial(.regular, size: 18))
                 .foregroundColor(Color.primaryBackground)
                 .lineLimit(5)
@@ -82,7 +82,7 @@ struct ChatView: View {
                     "",
                     text: $viewModel.countryCode,
                     prompt:
-                        Text("label.countryCode")
+                        Text("+1")
                         .foregroundColor(Color.secondaryAccentColor)
                 )
                 .keyboardType(.numberPad)
@@ -94,7 +94,7 @@ struct ChatView: View {
                     "",
                     text: $viewModel.phoneNumber,
                     prompt:
-                        Text("label.number")
+                        Text("Phone Number")
                         .foregroundColor(Color.secondaryAccentColor)
                 )
                 .foregroundColor(Color.primaryBackground)
@@ -106,7 +106,7 @@ struct ChatView: View {
                 "",
                 text: $viewModel.message,
                 prompt:
-                    Text("label.message")
+                    Text("Message (Optional)")
                     .foregroundColor(Color.secondaryAccentColor),
                 axis: .vertical
             )
@@ -125,5 +125,5 @@ struct ChatView: View {
 
 #Preview {
     ChatView(viewModel: ChatViewModel(apiService: APIClient(), store: PreviewsStore()))
-            .environment(\.locale, .init(identifier: "en"))
+            .environment(\.locale, .init(identifier: "es"))
 }

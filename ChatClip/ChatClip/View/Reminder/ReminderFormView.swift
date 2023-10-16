@@ -22,10 +22,10 @@ struct ReminderFormView: View {
                 Section {
                     HStack {
                         Text("+")
-                        TextField("label.number", text: $viewModel.phoneNumber)
+                        TextField("Phone Number", text: $viewModel.phoneNumber)
                             .keyboardType(.numberPad)
                     }
-                    TextField("label.message", text: $viewModel.message)
+                    TextField("Message (Optional)", text: $viewModel.message)
                 } header: {
                     Text("Text")
                 }
@@ -43,8 +43,9 @@ struct ReminderFormView: View {
                     } label: {
                         Text("Save")
                             .fontWeight(.semibold)
-                            .foregroundStyle(.blue)
                     }
+                    .foregroundStyle(viewModel.phoneNumber.isEmpty ? Color.secondaryBackground : Color.blue)
+                    .disabled(viewModel.phoneNumber.isEmpty)
                 }
                 ToolbarItem(placement: .principal) {
                     Text("Details")
@@ -60,6 +61,9 @@ struct ReminderFormView: View {
                     }
                 }
             }
+        }
+        .onTapGesture {
+            UIApplication.shared.hideKeyboard()
         }
     }
     

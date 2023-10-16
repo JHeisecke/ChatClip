@@ -11,6 +11,7 @@
 		0001F8E62ADDA9E10046BE48 /* UserDefaults+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001F8E52ADDA9E10046BE48 /* UserDefaults+Store.swift */; };
 		0001F8E82ADDA9EE0046BE48 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001F8E72ADDA9EE0046BE48 /* Store.swift */; };
 		0001F8EB2ADDAAB50046BE48 /* UserDeaults+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001F8EA2ADDAAB50046BE48 /* UserDeaults+Helper.swift */; };
+		0001F8ED2ADDBFE30046BE48 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 0001F8EC2ADDBFE30046BE48 /* Localizable.xcstrings */; };
 		004EB1B22AC5DE4D0010CB39 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EB1B12AC5DE4D0010CB39 /* View+Extensions.swift */; };
 		004EB1B42AC5E0620010CB39 /* RectKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EB1B32AC5E0620010CB39 /* RectKey.swift */; };
 		0060EBE82AD32BFB005DCBAD /* APINotificationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060EBE72AD32BFB005DCBAD /* APINotificationClient.swift */; };
@@ -37,7 +38,6 @@
 		00EABBD32AD05FC800288879 /* ReminderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EABBD22AD05FC800288879 /* ReminderCellViewModel.swift */; };
 		00FE1C702AB4E0610071AA79 /* GlacialIndifference-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00FE1C6F2AB4E0600071AA79 /* GlacialIndifference-Regular.otf */; };
 		00FE1C722AB4E2370071AA79 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C712AB4E2370071AA79 /* Endpoints.swift */; };
-		00FE1C752AB4E3990071AA79 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00FE1C772AB4E3990071AA79 /* Localizable.strings */; };
 		00FE1C7C2AB4E76B0071AA79 /* country_codes.json in Resources */ = {isa = PBXBuildFile; fileRef = 00FE1C7B2AB4E76B0071AA79 /* country_codes.json */; };
 		00FE1C842AB4E85E0071AA79 /* CountryPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C832AB4E85E0071AA79 /* CountryPhone.swift */; };
 		00FE1C872AB4E9890071AA79 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE1C862AB4E9890071AA79 /* APIService.swift */; };
@@ -51,6 +51,7 @@
 		0001F8E52ADDA9E10046BE48 /* UserDefaults+Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Store.swift"; sourceTree = "<group>"; };
 		0001F8E72ADDA9EE0046BE48 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		0001F8EA2ADDAAB50046BE48 /* UserDeaults+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDeaults+Helper.swift"; sourceTree = "<group>"; };
+		0001F8EC2ADDBFE30046BE48 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		004EB1B12AC5DE4D0010CB39 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		004EB1B32AC5E0620010CB39 /* RectKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectKey.swift; sourceTree = "<group>"; };
 		0060EBE72AD32BFB005DCBAD /* APINotificationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINotificationClient.swift; sourceTree = "<group>"; };
@@ -79,8 +80,6 @@
 		00EABBD22AD05FC800288879 /* ReminderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCellViewModel.swift; sourceTree = "<group>"; };
 		00FE1C6F2AB4E0600071AA79 /* GlacialIndifference-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GlacialIndifference-Regular.otf"; sourceTree = "<group>"; };
 		00FE1C712AB4E2370071AA79 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		00FE1C762AB4E3990071AA79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		00FE1C7A2AB4E4680071AA79 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		00FE1C7B2AB4E76B0071AA79 /* country_codes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country_codes.json; sourceTree = "<group>"; };
 		00FE1C832AB4E85E0071AA79 /* CountryPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPhone.swift; sourceTree = "<group>"; };
 		00FE1C862AB4E9890071AA79 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -233,7 +232,7 @@
 				006C2DB12AB49806000DF11C /* Assets.xcassets */,
 				006C2DC72AB4A9D3000DF11C /* Colors.xcassets */,
 				006C2DCA2AB4AA8D000DF11C /* Colors.swift */,
-				00FE1C772AB4E3990071AA79 /* Localizable.strings */,
+				0001F8EC2ADDBFE30046BE48 /* Localizable.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -368,10 +367,10 @@
 				006C2DC82AB4A9D3000DF11C /* Colors.xcassets in Resources */,
 				006C2DD12AB4DD17000DF11C /* GlacialIndifference-Italic.otf in Resources */,
 				00FE1C7C2AB4E76B0071AA79 /* country_codes.json in Resources */,
-				00FE1C752AB4E3990071AA79 /* Localizable.strings in Resources */,
 				006C2DB52AB49806000DF11C /* Preview Assets.xcassets in Resources */,
 				00FE1C702AB4E0610071AA79 /* GlacialIndifference-Regular.otf in Resources */,
 				006C2DB22AB49806000DF11C /* Assets.xcassets in Resources */,
+				0001F8ED2ADDBFE30046BE48 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,18 +414,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		00FE1C772AB4E3990071AA79 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00FE1C762AB4E3990071AA79 /* en */,
-				00FE1C7A2AB4E4680071AA79 /* es-419 */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		006C2DB62AB49806000DF11C /* Debug */ = {

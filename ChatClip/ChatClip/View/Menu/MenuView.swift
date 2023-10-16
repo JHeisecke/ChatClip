@@ -31,14 +31,14 @@ struct MenuView: View {
                 viewModel: viewModel.chatViewModel
             )
             .tabItem {
-                Label("label.chat", systemImage: "paperclip")
+                Label("Chat", systemImage: "paperclip")
             }
             .tag(1)
             RemindersView(
                 viewModel: viewModel.reminderViewModel
             )
             .tabItem {
-                Label("label.reminder", systemImage: "bell.fill")
+                Label("Reminders", systemImage: "bell.fill")
             }
             .tag(2)
         }

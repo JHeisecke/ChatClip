@@ -27,14 +27,15 @@ struct RemindersView: View {
                     List {
                         ForEach(reminderCellViewModels) { cellViewModel in
                             ReminderCellView(viewModel: cellViewModel)
-                                .swipeActions(edge: .leading) {
-                                    Button {
-                                        viewModel.editReminder()
-                                    } label: {
-                                        Image(systemName: "pencil")
-                                    }
-                                }
-                                .tint(.blue)
+                            //TODO: Add Editing of reminders
+                    //        .swipeActions(edge: .leading) {
+                    //            Button {
+                    //                viewModel.editReminder()
+                    //            } label: {
+                    //                Image(systemName: "pencil")
+                    //            }
+                    //        }
+                    //        .tint(.blue)
                                 .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                     Button {
                                         viewModel.deleteReminder(cellViewModel.reminder)
