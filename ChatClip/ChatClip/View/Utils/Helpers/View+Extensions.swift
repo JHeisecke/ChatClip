@@ -61,6 +61,8 @@ extension View {
     }
 }
 
+// MARK: - UIView
+
 extension UIView {
     func image(_ size: CGSize) -> UIImage {
         let renderer = UIGraphicsImageRenderer(size: size)

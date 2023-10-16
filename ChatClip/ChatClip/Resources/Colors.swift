@@ -20,11 +20,23 @@ extension UIColor {
     static var lightGreen: UIColor {
         .init(named: "lightGreen")!
     }
-    static var bone: UIColor {
-        .init(named: "bone")!
+    static var secondaryBackground: UIColor {
+        .init(named: "secondaryBackground")!
     }
-    static var theme: UIColor {
-        .init(named: "theme")!
+    static var grayedBlue: UIColor {
+        .init(named: "grayedBlue")!
+    }
+    static var niceBlue: UIColor {
+        .init(named: "niceBlue")!
+    }
+    static var primaryBackground: UIColor {
+        .init(named: "primaryBackground")!
+    }
+    static var secondaryAccentColor: UIColor {
+        .init(named: "secondaryAccentColor")!
+    }
+    static var accent: UIColor {
+        .init(named: "AccentColor")!
     }
 }
 
@@ -41,10 +53,22 @@ extension Color {
     static var lightGreen: Color {
         .init(uiColor: .lightGreen)
     }
-    static var bone: Color {
-        .init(uiColor: .bone)
+    static var secondaryBackground: Color {
+        .init(uiColor: .secondaryBackground)
     }
-    static var theme: Color {
-        .init(uiColor: .theme)
+    static var grayedBlue: Color {
+        .init(uiColor: .grayedBlue)
+    }
+    static var niceBlue: Color {
+        .init(uiColor: .niceBlue)
+    }
+    static var primaryBackground: Color {
+        .init(uiColor: .primaryBackground)
+    }
+    static var secondaryAccentColor: Color {
+        .init(uiColor: .secondaryAccentColor)
+    }
+    static var accent: Color {
+        .init(uiColor: .accent)
     }
 }
