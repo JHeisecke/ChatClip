@@ -61,15 +61,8 @@
         }
       }
     },
-    "chatclip" : {
-      "extractionState" : "stale",
+    "ChatClip" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ChatClip"
-          }
-        },
         "es-419" : {
           "stringUnit" : {
             "state" : "translated",
@@ -78,15 +71,28 @@
         }
       }
     },
-    "ChatClip" : {
-
-    },
     "ChatClip reminds you to" : {
       "localizations" : {
         "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ChatClip te recuerda"
+          }
+        }
+      }
+    },
+    "ChatClip Would like to Send you Notifications" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"ChatClip\" Would like to Send you Notifications"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"ChatClip\" quiere enviarte notificaciones"
           }
         }
       }
@@ -107,6 +113,33 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Detalles"
+          }
+        }
+      }
+    },
+    "Go to Settings and allow ChatClip to send you notifications" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Go to Settings and allow \"ChatClip\" to send you notifications"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ve a Configuración y permite a \"ChatClip\" enviarte notificaciones"
+          }
+        }
+      }
+    },
+    "Key" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Key"
           }
         }
       }
@@ -187,6 +220,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enviar Mensaje"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuraciones"
           }
         }
       }

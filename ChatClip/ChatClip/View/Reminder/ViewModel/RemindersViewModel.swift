@@ -5,7 +5,7 @@
 //  Created by Javier Heisecke on 2023-09-28.
 //
 
-import Foundation
+import UIKit
 import Combine
 
 @Observable
@@ -22,13 +22,13 @@ final class RemindersViewModel {
     
     // MARK: - Properties
     
+    private var cancellables: Set<AnyCancellable> = []
+    
     private let notificationService: APINotificationService
     private let store: Store
     
     private(set) var state: State = .empty(message: String(localized: "No reminders created!"))
-        
-    private var cancellables: Set<AnyCancellable> = []
-    
+            
     var reminderFormViewModel: ReminderFormViewModel {
         ReminderFormViewModel(notificationService: notificationService, store: store)
     }
@@ -45,10 +45,6 @@ final class RemindersViewModel {
     }
     
     // MARK: - Methods
-    
-    func onAppear() {
-        getNotificationPermission()
-    }
     
     func setupPublishers() {
         store.remindersPublishers
@@ -69,14 +65,8 @@ final class RemindersViewModel {
     
     // MARK: - Public API
     
-    func getNotificationPermission() {
-        notificationService.askForPermission { granted in
-            if granted {
-                print(granted)
-            } else {
-                print(granted)
-            }
-        }
+    func checkNotificationsPermissions(completion: @escaping (Bool) -> Void) {
+        notificationService.askForPermission(completion: completion)
     }
     
     func deleteReminder(_ reminder: Reminder) {
@@ -91,5 +81,9 @@ final class RemindersViewModel {
     
     func editReminder() {
         //TODO: Edit Reminder
+    }
+    
+    func goToSettings() {
+        UIApplication.shared.goToSettings()
     }
 }

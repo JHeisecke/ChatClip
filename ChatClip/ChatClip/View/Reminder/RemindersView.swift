@@ -11,9 +11,10 @@ struct RemindersView: View {
     
     // MARK: Properties
     
-    @State private var showReminderSheet: Bool = false
+    @Bindable var viewModel: RemindersViewModel
     
-    var viewModel: RemindersViewModel
+    @State var showReminderSheet = false
+    @State var showGrantPermissionsAlert = false
     
     var body: some View {
         NavigationView {
@@ -28,14 +29,14 @@ struct RemindersView: View {
                         ForEach(reminderCellViewModels) { cellViewModel in
                             ReminderCellView(viewModel: cellViewModel)
                             //TODO: Add Editing of reminders
-                    //        .swipeActions(edge: .leading) {
-                    //            Button {
-                    //                viewModel.editReminder()
-                    //            } label: {
-                    //                Image(systemName: "pencil")
-                    //            }
-                    //        }
-                    //        .tint(.blue)
+                            //        .swipeActions(edge: .leading) {
+                            //            Button {
+                            //                viewModel.editReminder()
+                            //            } label: {
+                            //                Image(systemName: "pencil")
+                            //            }
+                            //        }
+                            //        .tint(.blue)
                                 .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                     Button {
                                         viewModel.deleteReminder(cellViewModel.reminder)
@@ -55,7 +56,14 @@ struct RemindersView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading, content: {
                     Button {
-                        showReminderSheet.toggle()
+                        viewModel.checkNotificationsPermissions() { isGranted in
+                            if isGranted {
+                                showReminderSheet = true
+                            } else {
+                                showGrantPermissionsAlert = true
+                            }
+                            
+                        }
                     } label: {
                         Image(systemName: "plus")
                             .font(.title2)
@@ -65,12 +73,26 @@ struct RemindersView: View {
                 })
             }
             .sheet(isPresented: $showReminderSheet) {
-                ReminderFormView(showReminderSheet: $showReminderSheet, viewModel: viewModel.reminderFormViewModel)
-                    .presentationDetents([.large])
+                ReminderFormView(
+                    showReminderSheet: $showReminderSheet,
+                    viewModel: viewModel.reminderFormViewModel
+                )
+                .presentationDetents([.large])
             }
-            .onAppear {
-                viewModel.onAppear()
-            }
+            .alert(
+                String(localized: "ChatClip Would like to Send you Notifications"),
+                isPresented: $showGrantPermissionsAlert,
+                actions: {
+                    Button("Cancel") {
+                        showGrantPermissionsAlert.toggle()
+                    }
+                    Button("Settings") {
+                        viewModel.goToSettings()
+                    }
+                }, message: {
+                    Text("Go to Settings and allow ChatClip to send you notifications")
+                }
+            )
         }
     }
 }
