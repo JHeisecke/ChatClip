@@ -1,6 +1,6 @@
 
 <p align="center" width="100%">
-<img src="https://github.com/JHeisecke/ChatClip/blob/main/images/1242x2688/1.png" width="200"> <img src="https://github.com/JHeisecke/ChatClip/blob/main/images1242x2688/2.png" width="200"> <img src="https://github.com/JHeisecke/ChatClip/blob/main/images1242x2688/3.png" width="200"> <img src="https://github.com/JHeisecke/ChatClip/blob/main/images1242x2688/4.png" width="200">
+<img src="https://github.com/JHeisecke/ChatClip/blob/main/Images/1242x2688/1.png" width="200"> <img src="https://github.com/JHeisecke/ChatClip/blob/main/Images/1242x2688/2.png" width="200"> <img src="https://github.com/JHeisecke/ChatClip/blob/main/Images/1242x2688/3.png" width="200"> <img src="https://github.com/JHeisecke/ChatClip/blob/main/Images/1242x2688/4.png" width="200">
 </p>
 
 
