@@ -9,4 +9,5 @@ import Foundation
 
 struct UserDefaultsKeys {
     static let lastCountryCodeUsed = "lastCountryCodeUsed"
+    static let reminders = "reminders"
 }
