@@ -31,4 +31,4 @@ ChatClip is a lightweight and user-friendly mobile application designed to simpl
 ChatClip makes one-time WhatsApp conversations a breeze, offering a convenient way to stay connected while keeping your contacts organized. Download ChatClip today and streamline your WhatsApp messaging experience.
 
 ### Attribution
-Icons done by: <a href="https://www.flaticon.es/iconos-gratis/adjuntar" title="adjuntar iconos">Smashicons</a> and <a href="https://www.flaticon.es/iconos-gratis/dm" title="dm iconos">Freepik</a>
+Icons done by: <a href="https://www.flaticon.es/autores/smashicons" title="adjuntar iconos">Smashicons</a> and <a href="https://www.flaticon.es/autores/freepik" title="dm iconos">Freepik</a>
