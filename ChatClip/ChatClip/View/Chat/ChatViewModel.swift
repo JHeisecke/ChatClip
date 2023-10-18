@@ -57,6 +57,7 @@ final class ChatViewModel {
         if let firstNumber = phoneNumber.first, firstNumber == "0" {
             phoneNumber.removeFirst()
         }
+        try? store.addLastCountryCodeUsed(countryCode)
         apiService.sendWhatsappMessage(to: phoneNumber, with: countryCode, text: message)
     }
     

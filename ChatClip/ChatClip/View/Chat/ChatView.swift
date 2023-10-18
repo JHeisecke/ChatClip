@@ -13,6 +13,9 @@ struct ChatView: View {
     
     var body: some View {
         chatClip
+            .onAppear {
+                viewModel.onAppear()
+            }
     }
     
     var chatClip: some View {
