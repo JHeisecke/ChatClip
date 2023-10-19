@@ -62,9 +62,6 @@ struct ReminderFormView: View {
                 }
             }
         }
-        .onTapGesture {
-            UIApplication.shared.hideKeyboard()
-        }
     }
     
     var dateForm: some View {
@@ -84,6 +81,9 @@ struct ReminderFormView: View {
                         Image(systemName: "calendar")
                     }
                 )
+            }
+            .onChange(of: viewModel.useDate) { _, _ in
+                UIApplication.shared.hideKeyboard()
             }
             if viewModel.useDate {
                 DatePicker(
