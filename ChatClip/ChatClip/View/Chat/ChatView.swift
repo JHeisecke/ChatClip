@@ -32,7 +32,7 @@ struct ChatView: View {
                         .foregroundColor(Color.secondaryBackground)
                         .padding(.bottom)
                         .overlay {
-                            floatingCard(width: width)
+                            FloatingCard(width: width)
                         }
                         .shadow(radius: 10)
                         .overlay(alignment: .top) {
@@ -71,7 +71,22 @@ struct ChatView: View {
         }
     }
     
-    func floatingCard(width: CGFloat) -> some View {
+}
+
+// MARK: - Preview
+
+#Preview {
+    ChatView(viewModel: ChatViewModel(apiService: APIClient(), store: PreviewsStore()))
+            .environment(\.locale, .init(identifier: "es"))
+}
+
+// MARK: - Floating Card
+
+struct FloatingCard: View {
+    
+    let width: CGFloat
+    
+    var body: some View {
         VStack {
             Spacer()
             Text("Send a Whatsapp message to an unsaved number")
@@ -121,12 +136,4 @@ struct ChatView: View {
         }
         .padding()
     }
-    
-}
-
-// MARK: - Preview
-
-#Preview {
-    ChatView(viewModel: ChatViewModel(apiService: APIClient(), store: PreviewsStore()))
-            .environment(\.locale, .init(identifier: "es"))
 }
