@@ -8,7 +8,7 @@
 ChatClip is a lightweight and user-friendly mobile application designed to simplify WhatsApp messaging. With ChatClip, you can initiate conversations with people on WhatsApp without the need to save their contact information in your phonebook. It's the ideal solution for those moments when you want to send a quick message or make a one-time connection without cluttering your contacts list.
 
 <a href="https://apps.apple.com/py/app/chatclip/id6466648058?l=en-GB">
-<img src="https://camo.githubusercontent.com/be2d8847b2a4470fd0b65088c8a742d83fc7a1ff08247d8a98231f62bc8fb8b5/68747470733a2f2f6d656469612e6c69736b2e636f6d2f696e69742f696f735f6170705f73746f72655f613630633835313732382e706e673f6175746f3d636f6d70726573732c666f726d6174266669743d6d617826773d393626713d3830">
+<img src="https://github.com/JHeisecke/ChatClip/blob/main/Images/download.png" width="200">
 </a>
 
 ### Key Features:
