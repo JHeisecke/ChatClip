@@ -29,7 +29,7 @@ struct ChatView: View {
                     Spacer()
                     RoundedRectangle(cornerRadius: 30)
                         .frame(width: width, height: height)
-                        .foregroundColor(Color.secondaryBackground)
+                        .foregroundStyle(Color.otherBackground)
                         .padding(.bottom)
                         .overlay {
                             floatingCard(width: width)
@@ -50,7 +50,7 @@ struct ChatView: View {
                             .font(.glacial(.regular, size: 18))
                             .foregroundColor(Color.tealGreenDark)
                             .padding()
-                            .background(viewModel.disableButton ? Color.secondaryBackground : Color.lime)
+                            .background(viewModel.disableButton ? Color.otherBackground : Color.lime)
                             .cornerRadius(10)
                             .padding(5)
                     }
@@ -86,7 +86,7 @@ struct ChatView: View {
                     text: $viewModel.countryCode,
                     prompt:
                         Text("+1")
-                        .foregroundColor(Color.secondaryAccentColor)
+                        .foregroundStyle(Color.otherAccent)
                 )
                 .keyboardType(.numberPad)
                 .font(.glacial(.regular, size: 17))
@@ -98,7 +98,7 @@ struct ChatView: View {
                     text: $viewModel.phoneNumber,
                     prompt:
                         Text("Phone Number")
-                        .foregroundColor(Color.secondaryAccentColor)
+                        .foregroundStyle(Color.otherAccent)
                 )
                 .foregroundColor(Color.primaryBackground)
                 .font(.glacial(.regular, size: 17))
@@ -110,7 +110,7 @@ struct ChatView: View {
                 text: $viewModel.message,
                 prompt:
                     Text("Message (Optional)")
-                    .foregroundColor(Color.secondaryAccentColor),
+                    .foregroundStyle(Color.otherAccent),
                 axis: .vertical
             )
             .lineLimit(1...5)
