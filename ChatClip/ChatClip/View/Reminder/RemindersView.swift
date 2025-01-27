@@ -21,36 +21,9 @@ struct RemindersView: View {
             VStack {
                 switch viewModel.state {
                 case .empty(let message):
-                    Spacer()
-                    Text(message)
-                    Spacer()
+                    emptyState(text: message)
                 case .data(let reminderCellViewModels):
-                    List {
-                        ForEach(reminderCellViewModels) { cellViewModel in
-                            ReminderCellView(viewModel: cellViewModel)
-                            //TODO: Add Editing of reminders
-                            //        .swipeActions(edge: .leading) {
-                            //            Button {
-                            //                viewModel.editReminder()
-                            //            } label: {
-                            //                Image(systemName: "pencil")
-                            //            }
-                            //        }
-                            //        .tint(.blue)
-                                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                    Button {
-                                        viewModel.deleteReminder(cellViewModel.reminder)
-                                    } label: {
-                                        Image(systemName: "trash")
-                                    }
-                                }
-                                .tint(.red)
-                                .listRowBackground(Color.secondaryBackground)
-                        }
-                    }
-                    .listRowSpacing(20)
-                    .scrollContentBackground(.hidden)
-                    .background(Color.secondaryAccentColor)
+                    dataView(viewModels: reminderCellViewModels)
                 }
             }
             .toolbar {
@@ -94,6 +67,43 @@ struct RemindersView: View {
                 }
             )
         }
+    }
+
+    func emptyState(text: String) -> some View {
+        VStack {
+            Spacer()
+            Text(text)
+            Spacer()
+        }
+    }
+
+    func dataView(viewModels: [ReminderCellViewModel]) -> some View {
+        List {
+            ForEach(viewModels, id: \.id) { cellViewModel in
+                ReminderCellView(viewModel: cellViewModel)
+                //TODO: Add Editing of reminders
+                //        .swipeActions(edge: .leading) {
+                //            Button {
+                //                viewModel.editReminder()
+                //            } label: {
+                //                Image(systemName: "pencil")
+                //            }
+                //        }
+                //        .tint(.blue)
+                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        Button {
+                            viewModel.deleteReminder(cellViewModel.reminder)
+                        } label: {
+                            Image(systemName: "trash")
+                        }
+                    }
+                    .tint(.red)
+                    .listRowBackground(Color.otherAccent)
+            }
+        }
+        .listRowSpacing(20)
+        .scrollContentBackground(.hidden)
+        .background(Color.otherBackground)
     }
 }
 

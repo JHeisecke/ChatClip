@@ -44,7 +44,7 @@ struct ReminderFormView: View {
                         Text("Save")
                             .fontWeight(.semibold)
                     }
-                    .foregroundStyle(viewModel.phoneNumber.isEmpty ? Color.secondaryBackground : Color.blue)
+                    .foregroundStyle(viewModel.phoneNumber.isEmpty ? Color.otherBackground : Color.blue)
                     .disabled(viewModel.phoneNumber.isEmpty)
                 }
                 ToolbarItem(placement: .principal) {
