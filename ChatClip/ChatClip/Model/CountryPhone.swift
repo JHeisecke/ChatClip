@@ -14,4 +14,11 @@ struct CountryPhone: Codable {
     let dialCode: String
     let code: String
     let emoji: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case dialCode = "dial_code"
+        case code
+        case emoji
+    }
 }

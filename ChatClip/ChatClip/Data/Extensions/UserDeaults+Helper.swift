@@ -48,8 +48,8 @@ extension UserDefaults {
         try encode(reminders, forKey: Keys.reminders)
     }
     
-    // MARK: - Last Country Code USed
-    
+    // MARK: - Last Country Code Used
+
     @objc var lastCountryCodeUsed: Data? {
         get {
             data(forKey: Keys.lastCountryCodeUsed)
@@ -62,7 +62,35 @@ extension UserDefaults {
     func addLastCountryCodeUsed(_ countryCode: String) throws {
         try encode(countryCode, forKey: Keys.lastCountryCodeUsed)
     }
-    
+
+    // MARK: - Recent Numbers
+
+    @objc dynamic var recentNumbers: Data? {
+        get {
+            data(forKey: "recentNumbers")
+        }
+        set {
+            set(newValue, forKey: "recentNumbers")
+        }
+    }
+
+    func addRecentNumber(_ recent: RecentNumber) throws {
+        let recents = try? JSONDecoder().decode(
+            [RecentNumber].self, from: self.recentNumbers ?? Data())
+        var newRecents = recents ?? []
+
+        newRecents.removeAll {
+            $0.countryCode == recent.countryCode && $0.phoneNumber == recent.phoneNumber
+        }
+
+        newRecents.insert(recent, at: 0)
+
+        if newRecents.count > 10 {
+            newRecents = Array(newRecents.prefix(10))
+        }
+
+        self.recentNumbers = try JSONEncoder().encode(newRecents)
+    }
 }
 
 fileprivate extension UserDefaults {
