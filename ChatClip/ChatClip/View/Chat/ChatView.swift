@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChatView: View {
 
-    @Bindable var viewModel: ChatViewModel
+    @State var viewModel: ChatViewModel
     @State private var showCountryPicker = false
 
     var body: some View {
@@ -56,11 +56,11 @@ struct ChatView: View {
                                 .background(
                                     viewModel.disableButton ? Color.otherBackground : Color.lime
                                 )
-                                .cornerRadius(10)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
                                 .padding(5)
                         }
+                        .disabled(viewModel.disableButton)
                     }
-                    .disabled(viewModel.disableButton)
 
                     recentsView
                         .padding(.bottom, 20)
@@ -73,9 +73,6 @@ struct ChatView: View {
         }
         .ignoresSafeArea()
         .ignoresSafeArea(.keyboard)
-        .onAppear {
-            //TODO: viewModel.getCountryPhoneCodes()
-        }
         .sheet(isPresented: $showCountryPicker) {
             CountryCodePicker(
                 countries: viewModel.countryCodes, selectedCountryCode: $viewModel.countryCode)
@@ -84,6 +81,8 @@ struct ChatView: View {
             UIApplication.shared.hideKeyboard()
         }
     }
+
+    // MARK: - Floating Card
 
     func floatingCard(width: CGFloat) -> some View {
         VStack {
@@ -106,11 +105,8 @@ struct ChatView: View {
                 }
                 .frame(width: width * 0.26, height: 45)
                 .background(Color.otherBackground)
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.tealGreenDark, lineWidth: 2)
-                )
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+
                 TextField(
                     "",
                     text: $viewModel.phoneNumber,
@@ -118,17 +114,9 @@ struct ChatView: View {
                         Text("Phone Number")
                         .foregroundStyle(Color.otherAccent)
                 )
-                .foregroundColor(Color.primaryBackground)
+                .foregroundStyle(Color.primaryBackground)
                 .font(.glacial(.regular, size: 17))
                 .textFieldStyle(ChatClipTextFieldStyle())
-                .keyboardType(.numberPad)
-                .padding(.leading, 5)
-                .background(Color.otherBackground)
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.tealGreenDark, lineWidth: 2)
-                )
                 .keyboardType(.numberPad)
             }
 
@@ -182,7 +170,7 @@ struct ChatView: View {
                                     .foregroundColor(.tealGreenDark)
                                     .padding(8)
                                     .background(Color.otherBackground)
-                                    .cornerRadius(15)
+                                    .clipShape(RoundedRectangle(cornerRadius: 15))
                                     .shadow(radius: 2)
                             }
                         }
@@ -201,52 +189,4 @@ struct ChatView: View {
 #Preview {
     ChatView(viewModel: ChatViewModel(apiService: APIClient(), store: PreviewsStore()))
         .environment(\.locale, .init(identifier: "es"))
-}
-
-struct CountryCodePicker: View {
-    let countries: [CountryPhone]
-    @Binding var selectedCountryCode: String
-    @Environment(\.dismiss) var dismiss
-    @State private var searchText = ""
-
-    var filteredCountries: [CountryPhone] {
-        if searchText.isEmpty {
-            return countries
-        } else {
-            return countries.filter {
-                $0.name.localizedCaseInsensitiveContains(searchText)
-                    || $0.dialCode.contains(searchText)
-            }
-        }
-    }
-
-    var body: some View {
-        NavigationStack {
-            List(filteredCountries, id: \.code) { country in
-                Button {
-                    selectedCountryCode = country.dialCode
-                    dismiss()
-                } label: {
-                    HStack {
-                        Text(country.emoji)
-                        Text(country.name)
-                        Spacer()
-                        Text(country.dialCode)
-                            .foregroundColor(.secondary)
-                    }
-                }
-                .foregroundStyle(Color.primary)
-            }
-            .searchable(text: $searchText)
-            .navigationTitle("Select Country")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                }
-            }
-        }
-    }
 }

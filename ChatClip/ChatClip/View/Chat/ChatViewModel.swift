@@ -5,18 +5,20 @@
 //  Created by Javier Heisecke on 2023-09-15.
 //
 
+import SwiftUI
 import Combine
-import Foundation
-import UIKit
 
 @Observable
 final class ChatViewModel {
 
     // MARK: - Properties
 
+    @ObservationIgnored
     private var cancellables: Set<AnyCancellable> = []
 
+    @ObservationIgnored
     private let apiService: APIService
+    @ObservationIgnored
     private let store: Store
 
     private(set) var countryCodes: CountryPhoneCodes = []
