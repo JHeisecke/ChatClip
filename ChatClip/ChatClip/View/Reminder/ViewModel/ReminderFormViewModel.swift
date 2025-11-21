@@ -18,11 +18,15 @@ final class ReminderFormViewModel {
     var useDate = false
     var reminderDate = Date()
 
+    @ObservationIgnored
     private var reminder: Reminder?
 
+    @ObservationIgnored
     private let notificationService: APINotificationService
+    @ObservationIgnored
     private let store: Store
 
+    @ObservationIgnored
     var remindMeTime: String {
         reminderDate.formatted(date: .abbreviated, time: .shortened)
     }
@@ -60,7 +64,6 @@ final class ReminderFormViewModel {
     }
 
     func saveReminder() {
-        // If editing, remove the old reminder first
         if let existingReminder = reminder {
             try? store.removeReminder(existingReminder)
             notificationService.removeNotification(existingReminder)
