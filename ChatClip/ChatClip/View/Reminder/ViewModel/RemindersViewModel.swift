@@ -5,34 +5,37 @@
 //  Created by Javier Heisecke on 2023-09-28.
 //
 
-import UIKit
 import Combine
+import UIKit
 
 @Observable
 final class RemindersViewModel {
-    
+
     // MARK: - Types
-    
+
     enum State {
         case empty(message: String)
         case data(
             reminderCellViewModels: [ReminderCellViewModel]
         )
     }
-    
+
     // MARK: - Properties
-    
+
     private var cancellables: Set<AnyCancellable> = []
-    
+
     private let notificationService: APINotificationService
     private let store: Store
-    
+
     private(set) var state: State = .empty(message: String(localized: "No reminders created!"))
-            
+
+    var selectedReminder: Reminder?
+
     var reminderFormViewModel: ReminderFormViewModel {
-        ReminderFormViewModel(notificationService: notificationService, store: store)
+        ReminderFormViewModel(
+            notificationService: notificationService, store: store, reminder: selectedReminder)
     }
-    
+
     // MARK: - Initialization
 
     init(
@@ -43,9 +46,9 @@ final class RemindersViewModel {
         self.notificationService = notificationService
         setupPublishers()
     }
-    
+
     // MARK: - Methods
-    
+
     func setupPublishers() {
         store.remindersPublishers
             .map { reminders in
@@ -62,13 +65,13 @@ final class RemindersViewModel {
             })
             .store(in: &cancellables)
     }
-    
+
     // MARK: - Public API
-    
+
     func checkNotificationsPermissions(completion: @escaping (Bool) -> Void) {
         notificationService.askForPermission(completion: completion)
     }
-    
+
     func deleteReminder(_ reminder: Reminder) {
         do {
             try store.removeReminder(reminder)
@@ -78,11 +81,15 @@ final class RemindersViewModel {
         }
         notificationService.removeNotification(reminder)
     }
-    
-    func editReminder() {
-        //TODO: Edit Reminder
+
+    func editReminder(_ reminder: Reminder) {
+        selectedReminder = reminder
     }
-    
+
+    func createNewReminder() {
+        selectedReminder = nil
+    }
+
     func goToSettings() {
         UIApplication.shared.goToSettings()
     }

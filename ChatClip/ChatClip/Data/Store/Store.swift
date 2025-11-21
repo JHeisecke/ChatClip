@@ -32,4 +32,6 @@ protocol Store {
     func addReminder(_ reminder: Reminder) throws
     func removeReminder(_ reminder: Reminder) throws
     func addRecentNumber(_ recent: RecentNumber) throws
+    func removeRecentNumber(_ recent: RecentNumber) throws
+    func clearAllRecentNumbers() throws
 }

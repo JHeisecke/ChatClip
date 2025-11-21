@@ -42,4 +42,12 @@ final class PreviewsStore: Store {
     func addRecentNumber(_ recent: RecentNumber) throws {
         recentNumbers.insert(recent, at: 0)
     }
+
+    func removeRecentNumber(_ recent: RecentNumber) throws {
+        recentNumbers.removeAll { $0 == recent }
+    }
+
+    func clearAllRecentNumbers() throws {
+        recentNumbers.removeAll()
+    }
 }

@@ -36,10 +36,10 @@ struct CountryCodePicker: View {
                             Text(searchText)
                             Spacer()
                             Text("Use this code")
-                                .foregroundColor(.secondary)
+                                .foregroundStyle(Color.tealGreenDark)
                         }
                     }
-                    .foregroundStyle(Color.primary)
+                    .foregroundStyle(Color.primaryBackground)
                 }
 
                 ForEach(filteredCountries, id: \.code) { country in
@@ -52,10 +52,10 @@ struct CountryCodePicker: View {
                             Text(country.name)
                             Spacer()
                             Text(country.dialCode)
-                                .foregroundColor(.secondary)
+                                .foregroundStyle(Color.tealGreenDark)
                         }
                     }
-                    .foregroundStyle(Color.primary)
+                    .foregroundStyle(Color.primaryBackground)
                 }
             }
             .searchable(text: $searchText)

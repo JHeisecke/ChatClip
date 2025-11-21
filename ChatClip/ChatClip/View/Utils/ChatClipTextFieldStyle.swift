@@ -12,7 +12,7 @@ struct ChatClipTextFieldStyle: TextFieldStyle {
         configuration
             .padding()
             .background(Color.gray.opacity(0.2))
-            .cornerRadius(10)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding(5)
     }
 }

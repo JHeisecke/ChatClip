@@ -13,6 +13,8 @@
 		0001F8EB2ADDAAB50046BE48 /* UserDeaults+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001F8EA2ADDAAB50046BE48 /* UserDeaults+Helper.swift */; };
 		0001F8ED2ADDBFE30046BE48 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 0001F8EC2ADDBFE30046BE48 /* Localizable.xcstrings */; };
 		002D5D942ECFD0920073A267 /* CountryCodePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D5D932ECFD0920073A267 /* CountryCodePicker.swift */; };
+		002D5D962ECFDC580073A267 /* FloatingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D5D952ECFDC580073A267 /* FloatingCardView.swift */; };
+		002D5D982ECFDC5E0073A267 /* RecentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D5D972ECFDC5E0073A267 /* RecentsView.swift */; };
 		004EB1B22AC5DE4D0010CB39 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EB1B12AC5DE4D0010CB39 /* View+Extensions.swift */; };
 		004EB1B42AC5E0620010CB39 /* RectKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004EB1B32AC5E0620010CB39 /* RectKey.swift */; };
 		0060EBE82AD32BFB005DCBAD /* APINotificationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060EBE72AD32BFB005DCBAD /* APINotificationClient.swift */; };
@@ -53,6 +55,8 @@
 		0001F8EA2ADDAAB50046BE48 /* UserDeaults+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDeaults+Helper.swift"; sourceTree = "<group>"; };
 		0001F8EC2ADDBFE30046BE48 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		002D5D932ECFD0920073A267 /* CountryCodePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodePicker.swift; sourceTree = "<group>"; };
+		002D5D952ECFDC580073A267 /* FloatingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingCardView.swift; sourceTree = "<group>"; };
+		002D5D972ECFDC5E0073A267 /* RecentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsView.swift; sourceTree = "<group>"; };
 		004EB1B12AC5DE4D0010CB39 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		004EB1B32AC5E0620010CB39 /* RectKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectKey.swift; sourceTree = "<group>"; };
 		0060EBE72AD32BFB005DCBAD /* APINotificationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINotificationClient.swift; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 				002D5D932ECFD0920073A267 /* CountryCodePicker.swift */,
 				00FE1C882AB4EA250071AA79 /* ChatViewModel.swift */,
 				006C2DBF2AB498DF000DF11C /* ChatView.swift */,
+				002D5D952ECFDC580073A267 /* FloatingCardView.swift */,
+				002D5D972ECFDC5E0073A267 /* RecentsView.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -383,12 +389,14 @@
 			files = (
 				00FE1C942AB4FFBF0071AA79 /* UIApplication+Extensions.swift in Sources */,
 				002D5D942ECFD0920073A267 /* CountryCodePicker.swift in Sources */,
+				002D5D982ECFDC5E0073A267 /* RecentsView.swift in Sources */,
 				0001F8E62ADDA9E10046BE48 /* UserDefaults+Store.swift in Sources */,
 				0060EBE82AD32BFB005DCBAD /* APINotificationClient.swift in Sources */,
 				006C2DC02AB498DF000DF11C /* ChatView.swift in Sources */,
 				0093C28D2AC611B60061768B /* MenuViewModel.swift in Sources */,
 				00EABBD12AD05F9F00288879 /* ReminderCellView.swift in Sources */,
 				0001F8E82ADDA9EE0046BE48 /* Store.swift in Sources */,
+				002D5D962ECFDC580073A267 /* FloatingCardView.swift in Sources */,
 				0093C28F2AC614200061768B /* RemindersView.swift in Sources */,
 				006C2DD42AB4DE61000DF11C /* Font.swift in Sources */,
 				00FE1C722AB4E2370071AA79 /* Endpoints.swift in Sources */,

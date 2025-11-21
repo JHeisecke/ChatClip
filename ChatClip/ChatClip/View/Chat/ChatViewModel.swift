@@ -5,8 +5,8 @@
 //  Created by Javier Heisecke on 2023-09-15.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 @Observable
 final class ChatViewModel {
@@ -62,6 +62,8 @@ final class ChatViewModel {
                 self?.recentNumbers = $0
             }
             .store(in: &cancellables)
+
+        paste()
     }
 
     func chat() {
@@ -102,5 +104,13 @@ final class ChatViewModel {
 
         // If no code matches, just paste into phone number
         phoneNumber = cleaned.filter { $0.isNumber }
+    }
+
+    func deleteRecentNumber(_ recent: RecentNumber) {
+        try? store.removeRecentNumber(recent)
+    }
+
+    func clearAllRecents() {
+        try? store.clearAllRecentNumbers()
     }
 }
