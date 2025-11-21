@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct RemindersView: View {
-    
+
     // MARK: Properties
-    
+
     @Bindable var viewModel: RemindersViewModel
-    
+
     @State var showReminderSheet = false
     @State var showGrantPermissionsAlert = false
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -27,23 +27,26 @@ struct RemindersView: View {
                 }
             }
             .toolbar {
-                ToolbarItem(placement: .topBarLeading, content: {
-                    Button {
-                        viewModel.checkNotificationsPermissions() { isGranted in
-                            if isGranted {
-                                showReminderSheet = true
-                            } else {
-                                showGrantPermissionsAlert = true
+                ToolbarItem(
+                    placement: .topBarLeading,
+                    content: {
+                        Button {
+                            viewModel.createNewReminder()
+                            viewModel.checkNotificationsPermissions { isGranted in
+                                if isGranted {
+                                    showReminderSheet = true
+                                } else {
+                                    showGrantPermissionsAlert = true
+                                }
+
                             }
-                            
+                        } label: {
+                            Image(systemName: "plus")
+                                .font(.title2)
+                                .foregroundStyle(Color.accent)
+                                .frame(width: 40, height: 40)
                         }
-                    } label: {
-                        Image(systemName: "plus")
-                            .font(.title2)
-                            .foregroundStyle(Color.accent)
-                            .frame(width: 40, height: 40)
-                    }
-                })
+                    })
             }
             .sheet(isPresented: $showReminderSheet) {
                 ReminderFormView(
@@ -62,7 +65,8 @@ struct RemindersView: View {
                     Button("Settings") {
                         viewModel.goToSettings()
                     }
-                }, message: {
+                },
+                message: {
                     Text("Go to Settings and allow ChatClip to send you notifications")
                 }
             )
@@ -81,15 +85,15 @@ struct RemindersView: View {
         List {
             ForEach(viewModels, id: \.id) { cellViewModel in
                 ReminderCellView(viewModel: cellViewModel)
-                //TODO: Add Editing of reminders
-                //        .swipeActions(edge: .leading) {
-                //            Button {
-                //                viewModel.editReminder()
-                //            } label: {
-                //                Image(systemName: "pencil")
-                //            }
-                //        }
-                //        .tint(.blue)
+                    .swipeActions(edge: .leading) {
+                        Button {
+                            viewModel.editReminder(cellViewModel.reminder)
+                            showReminderSheet = true
+                        } label: {
+                            Image(systemName: "pencil")
+                        }
+                    }
+                    .tint(.blue)
                     .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                         Button {
                             viewModel.deleteReminder(cellViewModel.reminder)

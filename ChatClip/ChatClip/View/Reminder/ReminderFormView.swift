@@ -10,7 +10,7 @@ import SwiftUI
 struct ReminderFormView: View {
     
     @Binding var showReminderSheet: Bool
-    @Bindable var viewModel: ReminderFormViewModel
+    @State var viewModel: ReminderFormViewModel
     
     var body: some View {
         NavigationView {

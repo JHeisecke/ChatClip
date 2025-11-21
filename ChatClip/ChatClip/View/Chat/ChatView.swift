@@ -8,125 +8,105 @@
 import SwiftUI
 
 struct ChatView: View {
-    
-    @Bindable var viewModel: ChatViewModel
-    
+
+    @State var viewModel: ChatViewModel
+    @State private var showCountryPicker = false
+
     var body: some View {
         chatClip
             .onAppear {
                 viewModel.onAppear()
             }
     }
-    
+
     var chatClip: some View {
         ZStack {
-            Image("BackgroundImage")
-                .resizable()
+            backgroundImage
+
             GeometryReader { proxy in
-                let width = proxy.size.width*0.8
-                let height = proxy.size.height*0.3
+                let width = proxy.size.width * 0.8
+                let height = proxy.size.height * 0.3
+
                 VStack {
                     Spacer()
-                    RoundedRectangle(cornerRadius: 30)
-                        .frame(width: width, height: height)
-                        .foregroundStyle(Color.otherBackground)
-                        .padding(.bottom)
-                        .overlay {
-                            floatingCard(width: width)
-                        }
-                        .shadow(radius: 10)
-                        .overlay(alignment: .top) {
-                            Text("ChatClip")
-                                .foregroundColor(Color.tealGreenDark)
-                                .font(.glacial(.bold, size: 50))
-                                .foregroundColor(.cyan)
-                                .offset(y: -49)
-                            
-                        }
-                    Button {
-                        viewModel.chat()
-                    } label: {
-                        Text("Send Message")
-                            .font(.glacial(.regular, size: 18))
-                            .foregroundColor(Color.tealGreenDark)
-                            .padding()
-                            .background(viewModel.disableButton ? Color.otherBackground : Color.lime)
-                            .cornerRadius(10)
-                            .padding(5)
+
+                    VStack {
+                        mainCard(width: width, height: height)
+                        sendButton
                     }
-                    .disabled(viewModel.disableButton)
+
+                    RecentsView(viewModel: viewModel)
+                        .padding(.bottom, 20)
+
                     Spacer()
-                    
                 }
-                .frame(maxWidth: .infinity)
+                .frame(width: proxy.size.width, height: proxy.size.height)
             }
+            .frame(maxWidth: .infinity)
         }
         .ignoresSafeArea()
         .ignoresSafeArea(.keyboard)
-        .onAppear {
-            //TODO: viewModel.getCountryPhoneCodes()
+        .sheet(isPresented: $showCountryPicker) {
+            CountryCodePicker(
+                countries: viewModel.countryCodes, selectedCountryCode: $viewModel.countryCode)
         }
         .onTapGesture {
             UIApplication.shared.hideKeyboard()
         }
     }
-    
-    func floatingCard(width: CGFloat) -> some View {
-        VStack {
-            Spacer()
-            Text("Send a Whatsapp message to an unsaved number")
-                .font(.glacial(.regular, size: 18))
-                .foregroundColor(Color.primaryBackground)
-                .lineLimit(5)
-                .multilineTextAlignment(.leading)
-            Spacer()
-            HStack {
-                TextField(
-                    "",
-                    text: $viewModel.countryCode,
-                    prompt:
-                        Text("+1")
-                        .foregroundStyle(Color.otherAccent)
-                )
-                .keyboardType(.numberPad)
-                .font(.glacial(.regular, size: 17))
-                .textFieldStyle(ChatClipTextFieldStyle())
-                .frame(width: width*0.26)
-                .foregroundColor(Color.primaryBackground)
-                TextField(
-                    "",
-                    text: $viewModel.phoneNumber,
-                    prompt:
-                        Text("Phone Number")
-                        .foregroundStyle(Color.otherAccent)
-                )
-                .foregroundColor(Color.primaryBackground)
-                .font(.glacial(.regular, size: 17))
-                .textFieldStyle(ChatClipTextFieldStyle())
-                .keyboardType(.numberPad)
-            }
-            TextField(
-                "",
-                text: $viewModel.message,
-                prompt:
-                    Text("Message (Optional)")
-                    .foregroundStyle(Color.otherAccent),
-                axis: .vertical
-            )
-            .lineLimit(1...5)
-            .foregroundColor(.tealGreenDark)
-            .textFieldStyle(ChatClipTextFieldStyle())
-            .font(.glacial(.regular, size: 18))
-            Spacer()
-        }
-        .padding()
+
+    var backgroundImage: some View {
+        Image("BackgroundImage")
+            .resizable()
     }
-    
+
+    func mainCard(width: CGFloat, height: CGFloat) -> some View {
+        RoundedRectangle(cornerRadius: 30)
+            .frame(width: width, height: height)
+            .foregroundStyle(Color.otherBackground)
+            .padding(.bottom)
+            .overlay {
+                FloatingCardView(
+                    viewModel: viewModel,
+                    showCountryPicker: $showCountryPicker,
+                    width: width
+                )
+            }
+            .shadow(radius: 10)
+            .overlay(alignment: .top) {
+                headerTitle
+            }
+    }
+
+    var headerTitle: some View {
+        Text("ChatClip")
+            .foregroundStyle(Color.tealGreenDark)
+            .font(.glacial(.bold, size: 50))
+            .foregroundStyle(.cyan)
+            .offset(y: -49)
+    }
+
+    var sendButton: some View {
+        Button {
+            viewModel.chat()
+        } label: {
+            Text("Send Message")
+                .font(.glacial(.regular, size: 18))
+                .foregroundStyle(Color.tealGreenDark)
+                .padding()
+                .background(
+                    viewModel.disableButton ? Color.otherBackground : Color.lime
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .padding(5)
+        }
+        .disabled(viewModel.disableButton)
+    }
 }
 
 // MARK: - Preview
 
 #Preview {
     ChatView(viewModel: ChatViewModel(apiService: APIClient(), store: PreviewsStore()))
-            .environment(\.locale, .init(identifier: "es"))
+        .environment(\.locale, .init(identifier: "es"))
 }
