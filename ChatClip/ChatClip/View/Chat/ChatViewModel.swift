@@ -62,8 +62,6 @@ final class ChatViewModel {
                 self?.recentNumbers = $0
             }
             .store(in: &cancellables)
-
-        paste()
     }
 
     func chat() {
